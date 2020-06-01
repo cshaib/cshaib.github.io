@@ -6,3 +6,5 @@ description: > # your text below (remove <br> elements if you don't need line br
   Adventures in NLP, Scala, Python, and everything in between. 
   
 theme: jekyll-theme-minimal
+plugins:
+  - jemoji
