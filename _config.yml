@@ -7,11 +7,12 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   Quick links: 
   <br>
-  <a href="https://www.cshaib.github.io/about/">About</a> 
-  <a href="https://www.cshaib.github.io/now/">Now</a> 
-  <a href="https://www.cshaib.github.io/projects/">Projects</a> 
-  <a href="https://www.cshaib.github.io/books/">Books I'm Reading</a>
-  
+  <a href="https://www.cshaib.github.io/about/">:wave: About</a> 
+  <a href="https://www.cshaib.github.io/now/">:dart: Now</a> 
+  <a href="https://www.cshaib.github.io/projects/">:wrench: Projects</a> 
+  <a href="https://www.cshaib.github.io/books/">:books: Books</a>
+  <br><br>
+    
 theme: jekyll-theme-minimal
 plugins:
   - jemoji
