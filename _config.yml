@@ -9,11 +9,11 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   <a href="/about">:wave: About</a> 
   <br>
-  <a href="https://www.cshaib.github.io/now/">:dart: Now</a> 
+  <a href="/now">:dart: Now</a> 
   <br>
-  <a href="https://www.cshaib.github.io/projects/">:wrench: Projects</a> 
+  <a href="/projects">:wrench: Projects</a> 
   <br>
-  <a href="https://www.cshaib.github.io/books/">:books: Books</a>
+  <a href="/books">:books: Books</a>
   <br><br>
     
 theme: jekyll-theme-minimal
