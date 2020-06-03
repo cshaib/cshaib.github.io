@@ -1,9 +1,16 @@
 title: Chantal Shaib # your name (or website title) here
-logo: "/images/tinysmall.png?raw=false" # your photo (or logo) here
+logo: "/images/tiny.jpg?raw=false" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  MSc. Applied Computing - <br> University of Toronto 
+  MSc. Applied Computing, <br> University of Toronto 
   <br><br>
   Adventures in NLP, Scala, Python, and everything in between. 
+  <br><br>
+  Quick links: 
+  <br>
+  <a href="https://www.cshaib.github.io/about/">About</a> 
+  <a href="https://www.cshaib.github.io/now/">Now</a> 
+  <a href="https://www.cshaib.github.io/projects/">Projects</a> 
+  <a href="https://www.cshaib.github.io/books/">Books I'm Reading</a>
   
 theme: jekyll-theme-minimal
 plugins:
