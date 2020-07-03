@@ -12,7 +12,7 @@ Here are some of the communication tools I have under my belt.
 
 :us: English (native)
 <br>
-:lebanon: Arabic (mother) 
+:lebanon: Arabic (native) 
 <br>
 :canada: French (level B2)
 <br>
