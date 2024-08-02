@@ -152,3 +152,21 @@ span.highlight {
   text-align: right;
   font-size: small;
 }
+
+.news-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.news-table th {
+  width: 120px;
+  text-align: left;
+  vertical-align: top;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.news-table td {
+  vertical-align: top;
+  padding-bottom: 15px;
+}
