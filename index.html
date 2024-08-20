@@ -16,33 +16,34 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f3e9;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e1d5c3' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-color: #f5f0ff; /* Very light pastel purple */
         }
         .container {
             background-color: white;
-            border: 2px solid #2c3e50;
-            box-shadow: 8px 8px 0 #2c3e50;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             padding: 40px;
-            position: relative;
         }
         .name {
             font-family: 'Roboto', sans-serif;
             font-size: 2.5em;
             margin: 0 0 10px;
-            text-align: center;
-            color: #e74c3c;
+            text-align: left;
+            color: #2c3e50;
         }
-        .project-link {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1em;
-            text-align: center;
+        .projects {
+            text-align: left;
             margin-bottom: 20px;
-            display: block;
+            font-size: 0.9em;
+        }
+        .projects strong {
+            color: #2c3e50;
+        }
+        .projects a {
             color: #e74c3c;
             text-decoration: none;
         }
-        .project-link:hover {
+        .projects a:hover {
             text-decoration: underline;
         }
         .content {
@@ -51,18 +52,19 @@
             gap: 40px;
         }
         .profile-section {
-            flex: 1;
-            min-width: 300px;
+            flex: 1 1 100%;
         }
         .profile-image-container {
-            text-align: center;
+            float: right;
+            margin-left: 20px;
             margin-bottom: 20px;
+            text-align: center;
         }
         .profile-image {
             width: 200px;
             height: 200px;
             object-fit: cover;
-            border: 2px solid #2c3e50;
+            border: 1px solid #e0e0e0;
         }
         .links {
             display: flex;
@@ -85,13 +87,13 @@
             font-size: 0.9em;
         }
         .news-section {
-            flex: 1;
-            min-width: 300px;
+            flex: 1 1 100%;
+            margin-top: 40px;
         }
         .news-item {
             margin-bottom: 20px;
             padding-bottom: 20px;
-            border-bottom: 1px dashed #2c3e50;
+            border-bottom: 1px solid #e0e0e0;
         }
         .news-date {
             font-weight: bold;
@@ -102,7 +104,11 @@
 <body>
     <div class="container">
         <h1 class="name">Chantal Shaib</h1>
-        <a href="https://cshaib.github.io/syntactic_templates" class="project-link">Syntactic Templates Project</a>
+        <p class="projects">
+            <strong>Projects and Demos:</strong> 
+            <a href="https://cshaib.github.io/syntactic_templates">Detection and Measurement of Syntactic Templates</a> / 
+            <a href="https://pypi.org/project/diversity/">Diversity (PyPI)</a> / 
+        </p>
         <div class="content">
             <section class="profile-section">
                 <div class="profile-image-container">
