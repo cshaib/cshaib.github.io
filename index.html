@@ -53,12 +53,12 @@
         }
         .profile-section {
             flex: 1 1 100%;
+            display: flex;
+            gap: 40px;
         }
         .profile-image-container {
-            float: right;
-            margin-left: 20px;
-            margin-bottom: 20px;
-            text-align: center;
+            flex: 0 0 200px;
+            align-self: center;
         }
         .profile-image {
             width: 200px;
@@ -68,32 +68,38 @@
         }
         .links {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
             margin-top: 10px;
         }
         .links a {
             color: #e74c3c;
             text-decoration: none;
-            margin: 0 10px;
+            margin-right: 10px;
             font-size: 1.2em;
             transition: transform 0.3s;
         }
         .links a:hover {
             transform: scale(1.2);
         }
-        .bio p {
+        .bio {
+            flex: 1;
+            font-family: 'Times New Roman', Times, serif;
             text-align: justify;
-            font-size: 0.9em;
+            font-size: 1.1em;
         }
         .news-section {
             flex: 1 1 100%;
             margin-top: 40px;
         }
+        .news-section h2 {
+            font-size: 1.2em;
+        }
         .news-item {
             margin-bottom: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid #e0e0e0;
+            font-size: 0.9em;
         }
         .news-date {
             font-weight: bold;
@@ -105,9 +111,9 @@
     <div class="container">
         <h1 class="name">Chantal Shaib</h1>
         <p class="projects">
-            <strong>Projects and Demos:</strong> 
-            <a href="https://cshaib.github.io/syntactic_templates">Detection and Measurement of Syntactic Templates</a> / 
-            <a href="https://pypi.org/project/diversity/">Diversity (PyPI)</a> / 
+            <strong>Demos:</strong> 
+            <a href="https://cshaib.github.io/syntactic_templates">Syntactic Templates</a> / 
+            <a href="https://pypi.org/project/diversity/">Diversity (PyPI)</a> 
         </p>
         <div class="content">
             <section class="profile-section">
