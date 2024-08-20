@@ -1,105 +1,142 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>Chantal Shaib</title>
-
-  <meta name="author" content="Chantal Shaib">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chantal Shaib</title>
+    <meta name="author" content="Chantal Shaib">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Courier Prime', monospace;
+            line-height: 1.6;
+            color: #2c3e50;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f3e9;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e1d5c3' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .container {
+            background-color: white;
+            border: 2px solid #2c3e50;
+            box-shadow: 8px 8px 0 #2c3e50;
+            padding: 40px;
+            position: relative;
+        }
+        .name {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5em;
+            margin: 0 0 10px;
+            text-align: center;
+            color: #e74c3c;
+        }
+        .project-link {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            text-align: center;
+            margin-bottom: 20px;
+            display: block;
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        .project-link:hover {
+            text-decoration: underline;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .profile-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        .profile-image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #2c3e50;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .links a {
+            color: #e74c3c;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+            transition: transform 0.3s;
+        }
+        .links a:hover {
+            transform: scale(1.2);
+        }
+        .bio p {
+            text-align: justify;
+            font-size: 0.9em;
+        }
+        .news-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        .news-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #2c3e50;
+        }
+        .news-date {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
 </head>
-
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr style="padding:0px">
-               <td style="padding:2.5%;width:63%;vertical-align:middle">
-                  <p class="name" style="text-align: center;">
-                    Chantal Shaib
-                  </p>
-                  <p>
-                    I am a PhD student at the Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. 
-                    My research is currently motivated by evaluating and characterizing linguistic diversity in generative language models, 
-                    and more generally, parsing through the vast amount of biomedical literature using natural language processing systems.
-                  </p>
-                  <p>
-                  
-                    I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://vectorinstitute.ai/team/frank-rudzicz/">Frank Rudzicz</a>. 
-                    During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. 
-                    Before that, I received my BSc in Neuroscience at Carleton University.
-                  </p>
-                  <p>
-                    Outside of research, I am a director at <a href="https://hercodecamp.com/about">HER CODE CAMP</a>, a not-for-profit organization that aims to empower under-represented communities in technology. 
-                    I am also a registered yoga teacher (200hr) 🧘🏻‍♀️ and love to knit and embroider in my free time 🧶
-
-                  </p>
-                  <p style="text-align:center">
-                    <a href="mailto:shaib.c@northeastern.edu">Email</a> &nbsp;/&nbsp;
-                    <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
-                    <a href="https://twitter.com/ChantalShaib">Twitter</a> &nbsp;/&nbsp;
-                    <a href="https://github.com/cshaib/">GitHub</a> &nbsp;/&nbsp;
-                    <a href="https://www.linkedin.com/in/chantal-s-088b24109/">LinkedIn</a> &nbsp;/&nbsp;
-                  </p>
-                </td>
-                <td style="padding:2.5%;width:40%;max-width:40%">
-                  <!-- <a href="images/profile.png"> -->
-                  <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo"
-                    src="images/profile.png" class="hoverZoomLink">
-                  <!-- </a> -->
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          
-          <div class="news">
-            <div class="table-responsive">
-              <table class="table table-sm table-borderless">
-                <tr>
-                  <th scope="row">Oct 23, 2024</th>
-                  <td>
-                    Will be giving a (virtual) talk about diversity and templates in LLMs to <a href="https://nlp.cs.umass.edu/">UMass NLP</a>! 
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Jan 15, 2024</th>
-                  <td>
-                    Our work on the robustness of instruction-tuned models, <a href="https://arxiv.org/abs/2306.11270">Evaluating the Zero-shot Robustness of Instruction-tuned Language Models</a>, was accepted as a spotlight paper at ICLR 2024!
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Sept 4, 2023</th>
-                  <td>
-                    Giving a talk at <a href="https://mila.quebec/en">MILA</a> about our work on <a href="https://arxiv.org/abs/2305.06299">Summarizing, simplifying, and synthesizing medical evidence using GPT-3.</a>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:0px">
-                  <br>
-                  <p class="footer">
-                    Page format adapted from <a href="https://github.com/jonbarron/website">Jon Barron's template</a>.
-                  </p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="container">
+        <h1 class="name">Chantal Shaib</h1>
+        <a href="https://cshaib.github.io/syntactic_templates" class="project-link">Syntactic Templates Project</a>
+        <div class="content">
+            <section class="profile-section">
+                <div class="profile-image-container">
+                    <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
+                    <div class="links">
+                        <a href="mailto:shaib.c@northeastern.edu"><i class="fas fa-envelope"></i></a>
+                        <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://twitter.com/ChantalShaib"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/cshaib/"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/chantal-s-088b24109/"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="bio">
+                    <p>I am a PhD student at the Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. My research is currently motivated by evaluating and characterizing linguistic diversity in generative language models, and more generally, parsing through the vast amount of biomedical literature using natural language processing systems.</p>
+                    <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://vectorinstitute.ai/team/frank-rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
+                    <p>Outside of research, I am a director at <a href="https://hercodecamp.com/about">HER CODE CAMP</a>, a not-for-profit organization that aims to empower under-represented communities in technology. I am also a registered yoga teacher (200hr) 🧘🏻‍♀️ and love to knit and embroider in my free time 🧶</p>
+                </div>
+            </section>
+            <section class="news-section">
+                <h2>Recent News</h2>
+                <div class="news-item">
+                    <p class="news-date">Oct 23, 2024</p>
+                    <p>Will be giving a (virtual) talk about diversity and templates in LLMs to <a href="https://nlp.cs.umass.edu/">UMass NLP</a>!</p>
+                </div>
+                <div class="news-item">
+                    <p class="news-date">Jan 15, 2024</p>
+                    <p>Our work on the robustness of instruction-tuned models, <a href="https://arxiv.org/abs/2306.11270">Evaluating the Zero-shot Robustness of Instruction-tuned Language Models</a>, was accepted as a spotlight paper at ICLR 2024!</p>
+                </div>
+                <div class="news-item">
+                    <p class="news-date">Sept 4, 2023</p>
+                    <p>Giving a talk at <a href="https://mila.quebec/en">MILA</a> about our work on <a href="https://arxiv.org/abs/2305.06299">Summarizing, simplifying, and synthesizing medical evidence using GPT-3.</a></p>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
-
 </html>
