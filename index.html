@@ -3,164 +3,555 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chantal Shaib</title>
+    <title>Chantal Shaib | NLP Researcher</title>
     <meta name="author" content="Chantal Shaib">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --main-color: #3b4252;
+            --secondary-color: #677189;
+            --light-gray: #e8eaed;
+            --lighter-gray: #f5f7fa;
+            --accent: #de7aad;
+            --link-color: #5e81ac;
+            --link-hover: #81a1c1;
+            --background: #ffffff;
+            --cute-pink: #ffe0f0;
+            --cute-blue: #e0f0ff;
+            --cute-green: #e0ffe0;
+            --cute-purple: #f0e0ff;
+            --cute-orange: #ffe0c0;
+            --soft-shadow: rgba(93, 113, 139, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Courier Prime', monospace;
-            line-height: 1.6;
-            color: #2c3e50;
-            max-width: 1000px;
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--main-color);
+            background: var(--background);
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f0ff; /* Very light pastel purple */
         }
-        .container {
-            background-color: white;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            padding: 40px;
+
+        h1, h2, h3 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--main-color);
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
         }
-        .name {
-            font-family: 'Roboto', sans-serif;
-            font-size: 2.5em;
-            margin: 0 0 10px;
-            text-align: left;
-            color: #2c3e50;
+
+        h1 {
+            font-size: 2.2em;
+            margin-top: 40px;
+            font-weight: 700;
         }
-        .projects {
-            text-align: left;
-            margin-bottom: 20px;
-            font-size: 1em;
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--light-gray);
         }
-        .projects strong {
-            color: #2c3e50;
+
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
         }
-        .projects a {
-            color: #e74c3c;
+
+        a {
+            color: var(--link-color);
             text-decoration: none;
+            transition: color 0.2s;
         }
-        .projects a:hover {
+
+        a:hover {
             text-decoration: underline;
         }
-        .content {
+
+        /* Header styles */
+        header {
+            margin-bottom: 40px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
+            gap: 30px;
+            align-items: flex-start;
         }
-        .profile-section {
-            flex: 1 1 100%;
-            display: flex;
-            gap: 40px;
-        }
-        .profile-image-container {
-            flex: 0 0 200px;
-            align-self: center;
-        }
+
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 160px;
+            height: 160px;
             object-fit: cover;
-            border: 1px solid #e0e0e0;
+            border: 3px solid var(--cute-pink);
+            box-shadow: 0 4px 12px var(--soft-shadow);
         }
+
+        .title {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: var(--secondary-color);
+            font-size: 1.2em;
+            transition: all 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Main layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .about-section {
+            grid-column: 1;
+        }
+
+        .news-section {
+            grid-column: 2;
+        }
+
+        /* News styles */
+        .news-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .news-item {
+            padding: 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            background-color: var(--lighter-gray);
+            box-shadow: 0 2px 8px var(--soft-shadow);
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 240, 250, 0.3);
+            box-shadow: 0 8px 15px var(--soft-shadow);
+        }
+
+        .news-date {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .news-item:nth-child(1) .news-date {
+            background: var(--cute-blue);
+            color: #3b6ea3;
+        }
+        
+        .news-item:nth-child(2) .news-date {
+            background: var(--cute-pink);
+            color: #c74b89;
+        }
+        
+        .news-item:nth-child(3) .news-date {
+            background: var(--cute-green);
+            color: #3b8a56;
+        }
+        
+        .news-item:nth-child(4) .news-date {
+            background: var(--cute-purple);
+            color: #7e57c2;
+        }
+        
+        .news-item:nth-child(5) .news-date {
+            background: var(--cute-orange);
+            color: #c77b3b;
+        }
+
+        .news-content {
+            font-size: 0.95em;
+            margin-bottom: 0;
+        }
+
+        /* Projects/Demos section */
+        .projects-wrapper {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--lighter-gray);
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px var(--soft-shadow);
+            border: none;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px var(--soft-shadow);
+        }
+
+        .project-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--main-color);
+        }
+
+        .project-card p {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--link-color);
+            font-weight: 600;
+            position: relative;
+            padding-right: 20px;
+            transition: all 0.2s;
+        }
+        
+        .project-link:after {
+            content: "→";
+            position: absolute;
+            right: 0;
+            transition: transform 0.2s;
+        }
+        
+        .project-link:hover {
+            color: var(--link-hover);
+            transform: translateX(3px);
+            text-decoration: none;
+        }
+        
+        .project-link:hover:after {
+            transform: translateX(3px);
+        }
+
+        /* Publications section */
+        .publication {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--lighter-gray);
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px var(--soft-shadow);
+        }
+
+        .publication:hover {
+            box-shadow: 0 5px 15px var(--soft-shadow);
+        }
+
+        .publication h3 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            line-height: 1.4;
+            color: var(--main-color);
+        }
+
+        .authors {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .venue {
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
         .links {
             display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            margin-top: 10px;
+            gap: 15px;
+            font-size: 0.9em;
         }
-        .links a {
-            color: #e74c3c;
+
+        /* Demo and package badges */
+        .demo-badge {
+            display: inline-block;
+            background: var(--cute-pink);
+            color: #d14d8b;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+            box-shadow: 0 2px 4px var(--soft-shadow);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .package-badge {
+            display: inline-block;
+            background: var(--cute-blue);
+            color: #3b6ea3;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+            box-shadow: 0 2px 4px var(--soft-shadow);
+        }
+
+        .paper-link {
+            display: inline-block;
+            padding: 3px 10px;
+            background: var(--link-color);
+            color: white;
+            border-radius: 4px;
             text-decoration: none;
-            margin-right: 10px;
-            font-size: 1.2em;
-            transition: transform 0.3s;
+            font-size: 0.8em;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px var(--soft-shadow);
         }
-        .links a:hover {
-            transform: scale(1.2);
+        
+        .paper-link:hover {
+            background: var(--link-hover);
+            text-decoration: none;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--soft-shadow);
         }
-        .bio {
-            flex: 1;
-            font-family: 'Times New Roman', Times, serif;
-            text-align: justify;
-            font-size: 1em;
+        
+        .project-page-button {
+            display: inline-block;
+            padding: 3px 10px;
+            background: var(--cute-pink);
+            color: #d14d8b;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-left: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px var(--soft-shadow);
         }
-        .news-section {
-            flex: 1 1 100%;
-            margin-top: 40px;
+        
+        .project-page-button:hover {
+            background: #ffd1e6;
+            text-decoration: none;
+            color: #d14d8b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--soft-shadow);
         }
-        .news-section h2 {
-            font-size: 1.2em;
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 0.9em;
         }
-        .news-item {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
-            font-size: 1em;
-        }
-        .news-date {
-            font-weight: bold;
-            color: #e74c3c;
+
+        /* Media queries */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+            
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-section, .news-section {
+                grid-column: 1;
+            }
+            
+            .projects-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .publication {
+                padding: 15px;
+            }
+            
+            .news-item {
+                padding: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="name">Chantal Shaib</h1>
-        <p class="projects">
-            <strong>Demos:</strong> 
-            <a href="https://cshaib.github.io/syntactic_templates">Syntactic Templates</a> / 
-            <a href="https://pypi.org/project/diversity/">Diversity (PyPI)</a> 
-        </p>
-        <div class="content">
-            <section class="profile-section">
-                <div class="profile-image-container">
-                    <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
-                    <div class="links">
-                        <a href="mailto:shaib.c@northeastern.edu"><i class="fas fa-envelope"></i></a>
-                        <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en"><i class="fas fa-graduation-cap"></i></a>
-                        <a href="https://twitter.com/ChantalShaib"><i class="fab fa-twitter"></i></a>
-                        <a href="https://github.com/cshaib/"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/chantal-s-088b24109/"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="bio">
-                    <p>I am a PhD student at the Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. My research is currently motivated by evaluating and characterizing linguistic diversity in generative language models, and more generally, parsing through the vast amount of biomedical literature using natural language processing systems.</p>
-                    <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://vectorinstitute.ai/team/frank-rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
-                    <p>Outside of research, I am a registered yoga teacher and love to knit and embroider in my free time 🧘🏻‍♀️🧶🧘🏻‍♀️</p>
-                </div>
-            </section>
-            <section class="news-section">
-                <h2>Recent News</h2>
-                <div class="news-item">
-                    <p class="news-date">Feb 2024</p>
-                    <p>Our paper on syntactic templates as footprints in distillation is out on arXiv </p>
-                </div>
-                <div class="news-item">
-                    <p class="news-date">Jan 2024</p>
-                    <p>Will be returning to Meta Paris (FAIR) for a second research internship! </p>
-                </div>
-                <div class="news-item">
-                    <p class="news-date">Oct 2024</p>
-                    <p>Will be giving a (virtual) talk about diversity and templates in LLMs to <a href="https://nlp.cs.umass.edu/">UMass NLP</a>!</p>
-                </div>
-                <div class="news-item">
-                    <p class="news-date">June 2024</p>
-                    <p>Joined Meta Paris (GenAI) for a research internship working on Llama 🦙 </p>
-                </div>
-                <div class="news-item">
-                    <p class="news-date">Jan 2024</p>
-                    <p>Our work on the robustness of instruction-tuned models, <a href="https://arxiv.org/abs/2306.11270">Evaluating the Zero-shot Robustness of Instruction-tuned Language Models</a>, was accepted as a spotlight paper at ICLR 2024!</p>
-                </div>
-                <div class="news-item">
-                    <p class="news-date">Sept 2023</p>
-                    <p>Giving a talk at <a href="https://mila.quebec/en">MILA</a> about our work on <a href="https://arxiv.org/abs/2305.06299">Summarizing, simplifying, and synthesizing medical evidence using GPT-3.</a></p>
-                </div>
-            </section>
+    <header>
+        <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
+        <div>
+            <h1>Chantal Shaib</h1>
+            <p class="title">NLP/ML PhD Candidate<br>Northeastern University</p>
+            <div class="social-links">
+                <a href="mailto:shaib.c@northeastern.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://twitter.com/ChantalShaib" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://bsky.app/profile/chantalsh.bsky.social" aria-label="BlueSky"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/cshaib/" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/chantal-s-088b24109/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
+    </header>
+
+    <div class="main-layout">
+        <section class="about-section">
+            <h2>About</h2>
+            <p>I am a PhD student at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. Much of my current work focuses on evaluating and characterizing linguistic diversity and qualitative aspects of writing in generative language models.</p>
+            <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://vectorinstitute.ai/team/frank-rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
+        </section>
+        
+        <section class="news-section">
+            <h2>Recent News <i class="fas fa-newspaper" style="font-size: 0.8em; color: var(--accent);"></i></h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <span class="news-date">May 2025</span>
+                    <p class="news-content">Our paper on <a href="https://arxiv.org/abs/2502.06659">syntactic templates as footprints in distillation</a> was accepted to EMNLP findings. 📄✨</p>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">Jan 2025</span>
+                    <p class="news-content">Joining Meta NYC (FAIR) for another research internship in September! 🗽 </p>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">Oct 2024</span>
+                    <p class="news-content">Gave a talk about templates to <a href="https://nlp.cs.umass.edu/">UMass NLP</a> group.</p>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">June 2024</span>
+                    <p class="news-content">Joined Meta Paris (GenAI) for a research internship working on Llama. 🦙 🇫🇷 🥐</p>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">Jan 2024</span>
+                    <p class="news-content">Our research on <a href="https://arxiv.org/abs/2306.11270">Zero-shot Robustness of Instruction-tuned Language Models</a> received a spotlight achievement at the ICLR 2024 conference! 🌟🏆</p>
+                </div>
+            </div>
+        </section>
     </div>
+
+    <section>
+        <h2>Publications</h2>
+        <div class="publications-wrapper">
+            <div class="publication">
+                <h3>Who Taught You That? Tracing Teachers in Model Distillation</h3>
+                <p class="authors">Somin Wadhwa, Chantal Shaib, Silvio Amir, Byron C. Wallace</p>
+                <p class="venue">arXiv preprint (2024)</p>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2502.06659" class="paper-link">[Paper]</a>
+                    <a href="https://cshaib.github.io/syntactic_templates" class="project-page-button">Project Page</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3>Standardizing the Measurement of Text Diversity: A Tool and a Comparative Analysis of Scores</h3>
+                <p class="authors">Chantal Shaib, Joe Barrow, Jiuding Sun, Alexa F. Siu, Byron C. Wallace, Ani Nenkova</p>
+                <p class="venue">arXiv preprint (2024)</p>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2403.00553" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3>Detection and Measurement of Syntactic Templates in Generated Text</h3>
+                <p class="authors">Chantal Shaib, Yanai Elazar, Junyi Jessy Li, Byron C. Wallace</p>
+                <p class="venue">Conference on Empirical Methods in Natural Language Processing (2024)</p>
+                <div class="links">
+                    <a href="https://aclanthology.org/2024.emnlp-main.368/" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3>Evaluating the Zero-shot Robustness of Instruction-tuned Language Models</h3>
+                <p class="authors">Jiuding Sun, Chantal Shaib, Byron C. Wallace</p>
+                <p class="venue">International Conference on Learning Representations (2024) - Spotlight</p>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2306.11270" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3>Summarizing, Simplifying, and Synthesizing Medical Evidence using GPT-3 (with Varying Success)</h3>
+                <p class="authors">Chantal Shaib, Millicent Li, Sebastian Joseph, Iain Marshall, Junyi Jessy Li, Byron Wallace</p>
+                <p class="venue">Annual Meeting of the Association for Computational Linguistics (2023)</p>
+                <div class="links">
+                    <a href="https://aclanthology.org/2023.acl-short.119/" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3>How Much Annotation is Needed to Compare Summarization Models?</h3>
+                <p class="authors">Chantal Shaib, Joe Barrow, Alexa Siu, Byron Wallace, Ani Nenkova</p>
+                <p class="venue">Workshop on Bridging Human-Computer Interaction and Natural Language Processing (2024)</p>
+                <div class="links">
+                    <a href="https://aclanthology.org/2024.hcinlp-1.5/" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+            <!-- <div class="publication">
+                <h3>Explainable Clinical Decision Support from Text</h3>
+                <p class="authors">Jinyue Feng, Chantal Shaib, Frank Rudzicz</p>
+                <p class="venue">Conference on Empirical Methods in Natural Language Processing (2020)</p>
+                <div class="links">
+                    <a href="https://aclanthology.org/2020.emnlp-main.79/" class="paper-link">[Paper]</a>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section>
+        <h2>Demos & Software</h2>
+        <div class="projects-wrapper">
+            <div class="project-card">
+                <h3>AI Templates <span class="demo-badge">interactive</span></h3>
+                <p>An interactive application that showcases templates for AI-powered interfaces and interactions.</p>
+                <a href="https://ai-templates.app" class="project-link">Try It Live</a>
+            </div>
+            <div class="project-card">
+                <h3>Diversity (PyPI) <span class="package-badge">package</span></h3>
+                <p>A Python package that measures and evaluates linguistic diversity metrics in natural language generation systems.</p>
+                <a href="https://pypi.org/project/diversity/" class="project-link">View Package</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>made with ♡ in boston</p>
+        <p style="font-size: 0.8em; margin-top: 10px; color: var(--secondary-color);">Made with <span style="color: var(--accent);">♥</span> in Boston</p>
+    </footer>
 </body>
 </html>
