@@ -79,16 +79,17 @@
             text-decoration: underline;
         }
 
-        /* Header styles */
+        /* Header styles with improved alignment */
         header {
             margin-bottom: 40px;
             display: flex;
             gap: 30px;
-            align-items: flex-start;
+            align-items: flex-start; /* This ensures alignment at the top */
         }
 
         .profile-container {
             flex-shrink: 0;
+            margin-top: 8px; /* Small top margin to align with the first line of text */
         }
 
         .profile-image {
@@ -122,6 +123,10 @@
             flex-grow: 1;
         }
 
+        .about-header p:first-child {
+            margin-top: 0; /* Ensure the first paragraph aligns properly */
+        }
+
         .title {
             font-size: 1.3em;
             color: var(--secondary-color);
@@ -129,18 +134,21 @@
             font-weight: 400;
         }
 
-        /* News section styling */
+        /* News section styling - updated for inline display */
         .news-grid {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px; /* Reduced gap between items */
             margin-top: 20px;
         }
         
         .news-item {
-            padding: 15px;
+            padding: 12px 15px;
             border-radius: 10px;
             transition: all 0.25s ease;
+            display: flex; /* Make items flex containers */
+            align-items: center; /* Align date and content vertically */
+            gap: 15px; /* Space between date and content */
         }
 
         .news-item:hover {
@@ -150,12 +158,15 @@
 
         .news-date {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
             font-size: 0.8em;
             font-weight: 600;
-            margin-bottom: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            white-space: nowrap; /* Prevent date from wrapping */
+            min-width: 100px; /* Ensure consistent spacing */
+            text-align: center; /* Center text in date badge */
+            flex-shrink: 0; /* Prevent date from shrinking */
         }
         
         .news-item:nth-child(1) .news-date {
@@ -186,6 +197,7 @@
         .news-content {
             font-size: 0.95em;
             margin-bottom: 0;
+            flex-grow: 1; /* Allow text to take up remaining space */
         }
 
         /* Projects/Demos section */
@@ -402,6 +414,7 @@
 
             .profile-container {
                 margin-bottom: 10px;
+                margin-top: 0; /* Reset margin for mobile view */
             }
 
             .social-links {
@@ -420,6 +433,19 @@
             
             h2 {
                 font-size: 1.4em;
+            }
+        }
+        
+        /* For mobile responsiveness of news items */
+        @media (max-width: 480px) {
+            .news-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .news-date {
+                min-width: auto;
             }
         }
     </style>
@@ -446,7 +472,7 @@
         </div>
     </header>
 
-    <!-- News section - One column layout -->
+    <!-- News section - Updated with inline dates -->
     <section class="news-section">
         <h2>Recent News <i class="fas fa-newspaper" style="font-size: 0.8em; color: var(--accent);"></i></h2>
         <div class="news-grid">
