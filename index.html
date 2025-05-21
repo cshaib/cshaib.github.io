@@ -93,6 +93,7 @@
             object-fit: cover;
             border: 3px solid var(--cute-pink);
             box-shadow: 0 4px 12px var(--soft-shadow);
+            background-color: #f0f0f0;
         }
 
         .title {
@@ -158,7 +159,7 @@
         }
         
         .news-item {
-            padding: 20px;
+            padding: 10px;
             border: 0px solid var(--light-gray);
             border-radius: 8px;
             transition: all 0.25s ease;
@@ -222,7 +223,7 @@
         .projects-wrapper {
             margin-top: 20px;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 30px;
         }
 
@@ -490,34 +491,52 @@
 </head>
 <body>
     <header>
-        <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
-        <div>
-            <h1>Chantal Shaib</h1>
-            <p class="title">NLP/ML PhD Candidate<br>Northeastern University</p>
+        <div class="profile-container">
+            <div class="profile-image"></div>
             <div class="social-links">
-                <a href="mailto:shaib.c@northeastern.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                <a href="https://twitter.com/ChantalShaib" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://bsky.app/profile/chantalsh.bsky.social" aria-label="BlueSky"><i class="fab fa-twitter"></i></a>
-                <a href="https://github.com/cshaib/" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/chantal-s-088b24109/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="BlueSky"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="header-content">
+            <div>
+                <h1>Chantal Shaib</h1>
+                <!-- <h2>PhD Candidate @ Northeastern University</h2> -->
+            </div>
+            <div class="about-header">
+                <p>I am a PhD student studying ML/NLP at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. My research focuses on evaluating and characterizing linguistic diversity in generative language models, and more generally, parsing through the vast amount of biomedical literature using natural language processing systems.</p>
+                <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
             </div>
         </div>
     </header>
 
     <div class="main-layout">
-        <section class="about-section">
-            <h2>About</h2>
-            <p>I am a PhD student at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. My research focuses on evaluating and characterizing linguistic diversity in generative language models, and more generally, parsing through the vast amount of biomedical literature using natural language processing systems.</p>
-            <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://vectorinstitute.ai/team/frank-rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
+        <!-- Demos section - one card on top of the other -->
+        <section class="demos-section">
+            <h2>Demos & Software</h2>
+            <div class="projects-wrapper">
+                <div class="project-card">
+                    <h3>AI Templates <span class="demo-badge">interactive</span></h3>
+                    <p>An interactive application that showcases templates for AI-powered interfaces and interactions.</p>
+                    <a href="#" class="project-link">Try It Live</a>
+                </div>
+                <div class="project-card">
+                    <h3>Diversity (PyPI) <span class="package-badge">package</span></h3>
+                    <p>A Python package that measures and evaluates linguistic diversity metrics in natural language generation systems.</p>
+                    <a href="#" class="project-link">View Package</a>
+                </div>
+            </div>
         </section>
-        
         <section class="news-section">
             <h2>Recent News <i class="fas fa-newspaper" style="font-size: 0.8em; color: var(--accent);"></i></h2>
             <div class="news-grid">
                 <div class="news-item">
                     <span class="news-date">May 2025</span>
-                    <p class="news-content">Our paper on <a href="https://arxiv.org/abs/2502.06659">syntactic templates as footprints in distillation</a> was accepted to EMNLP findings. 📄✨</p>
+                    <p class="news-content">Our paper on syntactic templates as footprints in distillation was accepted to EMNLP findings. 📄✨</p>
                 </div>
                 <div class="news-item">
                     <span class="news-date">Jan 2025</span>
@@ -525,7 +544,7 @@
                 </div>
                 <div class="news-item">
                     <span class="news-date">Oct 2024</span>
-                    <p class="news-content">Gave a talk about templates to <a href="https://nlp.cs.umass.edu/">UMass NLP</a> group.</p>
+                    <p class="news-content">Gave a talk about templates to UMass NLP group!</p>
                 </div>
                 <div class="news-item">
                     <span class="news-date">June 2024</span>
@@ -533,7 +552,7 @@
                 </div>
                 <div class="news-item">
                     <span class="news-date">Jan 2024</span>
-                    <p class="news-content">Our research on <a href="https://arxiv.org/abs/2306.11270">Zero-shot Robustness of Instruction-tuned Language Models</a> was accepted to ICLR as a Spotlight! 🌟</p>
+                    <p class="news-content">Our paper on Zero-shot Robustness of Instruction-tuned Language Models was accepted to ICLR 2024 as a Spotlight! 🌟</p>
                 </div>
             </div>
         </section>
@@ -546,12 +565,12 @@
             <div class="project-card">
                 <h3>AI Templates <span class="demo-badge">interactive</span></h3>
                 <p>An interactive application that showcases templates for AI-powered interfaces and interactions.</p>
-                <a href="https://ai-templates.app" class="project-link">Try It Live</a>
+                <a href="#" class="project-link">Try It Live</a>
             </div>
             <div class="project-card">
                 <h3>Diversity (PyPI) <span class="package-badge">package</span></h3>
                 <p>A Python package that measures and evaluates linguistic diversity metrics in natural language generation systems.</p>
-                <a href="https://pypi.org/project/diversity/" class="project-link">View Package</a>
+                <a href="#" class="project-link">View Package</a>
             </div>
         </div>
     </section>
@@ -564,7 +583,7 @@
                 <p class="authors">Somin Wadhwa, Chantal Shaib, Silvio Amir, Byron C. Wallace</p>
                 <p class="venue">ACL Findings (2025)</p>
                 <div class="links">
-                    <a href="https://arxiv.org/abs/2502.06659" class="paper-link">[Paper]</a>
+                    <a href="#" class="paper-link">[Paper]</a>
                 </div>
             </div>
             <div class="publication">
@@ -572,8 +591,8 @@
                 <p class="authors">Chantal Shaib, Yanai Elazar, Junyi Jessy Li, Byron C. Wallace</p>
                 <p class="venue">EMNLP (2024)</p>
                 <div class="links">
-                    <a href="https://aclanthology.org/2024.emnlp-main.368/" class="paper-link">[Paper]</a>
-                    <a href="https://cshaib.github.io/syntactic_templates" class="project-page-button">Project Page</a>
+                    <a href="#" class="paper-link">[Paper]</a>
+                    <a href="#" class="project-page-button">Project Page</a>
                 </div>
             </div>
             <div class="publication">
@@ -581,9 +600,9 @@
                 <p class="authors">Chantal Shaib, Joe Barrow, Jiuding Sun, Alexa F. Siu, Byron C. Wallace, Ani Nenkova</p>
                 <p class="venue">arXiv preprint (2024)</p>
                 <div class="links">
-                    <a href="https://arxiv.org/abs/2403.00553" class="paper-link">[Paper]</a>
-                    <a href="https://ai-templates.app" class="project-page-button">Demo!</a>
-                    <a href="https://pypi.org/project/diversity/" class="project-page-button">Python Package</a>
+                    <a href="#" class="paper-link">[Paper]</a>
+                    <a href="#" class="project-page-button">Demo!</a>
+                    <a href="#" class="project-page-button">Python Package</a>
                 </div>
             </div>
             <div class="publication">
@@ -591,7 +610,7 @@
                 <p class="authors">Jiuding Sun, Chantal Shaib, Byron C. Wallace</p>
                 <p class="venue">International Conference on Learning Representations (2024) - Spotlight</p>
                 <div class="links">
-                    <a href="https://arxiv.org/abs/2306.11270" class="paper-link">[Paper]</a>
+                    <a href="#" class="paper-link">[Paper]</a>
                 </div>
             </div>
             <div class="publication">
@@ -599,7 +618,7 @@
                 <p class="authors">Chantal Shaib, Joe Barrow, Alexa Siu, Byron Wallace, Ani Nenkova</p>
                 <p class="venue">Workshop on Bridging Human-Computer Interaction and Natural Language Processing (2024)</p>
                 <div class="links">
-                    <a href="https://aclanthology.org/2024.hcinlp-1.5/" class="paper-link">[Paper]</a>
+                    <a href="#" class="paper-link">[Paper]</a>
                 </div>
             </div>
             <div class="publication">
@@ -607,22 +626,13 @@
                 <p class="authors">Chantal Shaib, Millicent Li, Sebastian Joseph, Iain Marshall, Junyi Jessy Li, Byron Wallace</p>
                 <p class="venue">Annual Meeting of the Association for Computational Linguistics (2023)</p>
                 <div class="links">
-                    <a href="https://aclanthology.org/2023.acl-short.119/" class="paper-link">[Paper]</a>
+                    <a href="#" class="paper-link">[Paper]</a>
                 </div>
             </div>
-            <!-- <div class="publication">
-                <h3>Explainable Clinical Decision Support from Text</h3>
-                <p class="authors">Jinyue Feng, Chantal Shaib, Frank Rudzicz</p>
-                <p class="venue">Conference on Empirical Methods in Natural Language Processing (2020)</p>
-                <div class="links">
-                    <a href="https://aclanthology.org/2020.emnlp-main.79/" class="paper-link">[Paper]</a>
-                </div>
-            </div> -->
         </div>
     </section>
 
     <footer>
-        <p>made with ♡ in boston</p>
         <p style="font-size: 0.8em; margin-top: 10px; color: var(--secondary-color);">Made with <span style="color: var(--accent);">♥</span> in Boston</p>
     </footer>
 </body>
