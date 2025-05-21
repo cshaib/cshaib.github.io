@@ -124,7 +124,7 @@
             display: grid;
             grid-template-columns: 2fr 1fr;
             grid-gap: 50px;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
 
         .about-section {
@@ -162,14 +162,14 @@
             border: 1px solid var(--light-gray);
             border-radius: 8px;
             transition: all 0.25s ease;
-            background-color: var(--lighter-gray);
-            box-shadow: 0 2px 8px var(--soft-shadow);
+            background-color: transparent;
+            box-shadow: none;
         }
 
         .news-item:hover {
             transform: translateY(-5px);
-            background-color: rgba(255, 240, 250, 0.3);
-            box-shadow: 0 8px 15px var(--soft-shadow);
+            background-color: transparent;
+            box-shadow: none;
         }
 
         .news-date {
@@ -213,6 +213,12 @@
         }
 
         /* Projects/Demos section */
+        .demos-section {
+            grid-column: 1;
+            padding-right: 20px;
+            margin-bottom: 30px;
+        }
+
         .projects-wrapper {
             margin-top: 20px;
             display: grid;
@@ -455,7 +461,7 @@
                 gap: 40px;
             }
             
-            .about-section, .news-section {
+            .about-section, .news-section, .demos-section {
                 grid-column: 1;
             }
             
@@ -533,13 +539,30 @@
         </section>
     </div>
 
+    <!-- Moved Demos & Software section here, right after the About section -->
+    <section class="demos-section">
+        <h2>Demos & Software</h2>
+        <div class="projects-wrapper">
+            <div class="project-card">
+                <h3>AI Templates <span class="demo-badge">interactive</span></h3>
+                <p>An interactive application that showcases templates for AI-powered interfaces and interactions.</p>
+                <a href="https://ai-templates.app" class="project-link">Try It Live</a>
+            </div>
+            <div class="project-card">
+                <h3>Diversity (PyPI) <span class="package-badge">package</span></h3>
+                <p>A Python package that measures and evaluates linguistic diversity metrics in natural language generation systems.</p>
+                <a href="https://pypi.org/project/diversity/" class="project-link">View Package</a>
+            </div>
+        </div>
+    </section>
+
     <section>
         <h2>Publications</h2>
         <div class="publications-wrapper">
             <div class="publication">
                 <h3>Who Taught You That? Tracing Teachers in Model Distillation</h3>
                 <p class="authors">Somin Wadhwa, Chantal Shaib, Silvio Amir, Byron C. Wallace</p>
-                <p class="venue">arXiv preprint (2024)</p>
+                <p class="venue">ACL Findings (2025)</p>
                 <div class="links">
                     <a href="https://arxiv.org/abs/2502.06659" class="paper-link">[Paper]</a>
                 </div>
@@ -547,7 +570,7 @@
             <div class="publication">
                 <h3>Detection and Measurement of Syntactic Templates in Generated Text</h3>
                 <p class="authors">Chantal Shaib, Yanai Elazar, Junyi Jessy Li, Byron C. Wallace</p>
-                <p class="venue">Conference on Empirical Methods in Natural Language Processing (2024)</p>
+                <p class="venue">EMNLP (2024)</p>
                 <div class="links">
                     <a href="https://aclanthology.org/2024.emnlp-main.368/" class="paper-link">[Paper]</a>
                     <a href="https://cshaib.github.io/syntactic_templates" class="project-page-button">Project Page</a>
@@ -595,22 +618,6 @@
                     <a href="https://aclanthology.org/2020.emnlp-main.79/" class="paper-link">[Paper]</a>
                 </div>
             </div> -->
-        </div>
-    </section>
-
-    <section>
-        <h2>Demos & Software</h2>
-        <div class="projects-wrapper">
-            <div class="project-card">
-                <h3>AI Templates <span class="demo-badge">interactive</span></h3>
-                <p>An interactive application that showcases templates for AI-powered interfaces and interactions.</p>
-                <a href="https://ai-templates.app" class="project-link">Try It Live</a>
-            </div>
-            <div class="project-card">
-                <h3>Diversity (PyPI) <span class="package-badge">package</span></h3>
-                <p>A Python package that measures and evaluates linguistic diversity metrics in natural language generation systems.</p>
-                <a href="https://pypi.org/project/diversity/" class="project-link">View Package</a>
-            </div>
         </div>
     </section>
 
