@@ -37,9 +37,9 @@
             line-height: 1.7;
             color: var(--main-color);
             background: var(--background);
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px;
         }
 
         h1, h2, h3 {
@@ -81,36 +81,36 @@
 
         /* Header styles */
         header {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             display: flex;
-            gap: 30px;
-            align-items: flex-start;
+            gap: 50px;
+            align-items: center;
         }
 
         .profile-image {
-            width: 160px;
-            height: 160px;
+            width: 180px;
+            height: 180px;
             object-fit: cover;
             border: 3px solid var(--cute-pink);
             box-shadow: 0 4px 12px var(--soft-shadow);
         }
 
         .title {
-            font-size: 1.2em;
+            font-size: 1.3em;
             color: var(--secondary-color);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 400;
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .social-links a {
             color: var(--secondary-color);
-            font-size: 1.2em;
+            font-size: 1.3em;
             transition: all 0.2s;
         }
 
@@ -123,27 +123,42 @@
         .main-layout {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            grid-gap: 30px;
-            margin-bottom: 40px;
+            grid-gap: 50px;
+            margin-bottom: 60px;
         }
 
         .about-section {
             grid-column: 1;
+            padding-right: 20px;
+        }
+        
+        .about-section p {
+            font-size: 1.05em;
+            margin-bottom: 20px;
+            color: var(--main-color);
+            line-height: 1.8;
         }
 
         .news-section {
             grid-column: 2;
         }
 
-        /* News styles */
+        /* News section styling */
+        .news-section {
+            grid-column: 2;
+            position: sticky;
+            top: 40px;
+            align-self: start;
+        }
+        
         .news-grid {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
         
         .news-item {
-            padding: 15px;
+            padding: 20px;
             border: 1px solid var(--light-gray);
             border-radius: 8px;
             transition: all 0.25s ease;
@@ -202,16 +217,19 @@
             margin-top: 20px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 30px;
         }
 
         .project-card {
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             background-color: var(--lighter-gray);
             transition: all 0.25s ease;
             box-shadow: 0 2px 8px var(--soft-shadow);
-            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
         }
         
         .project-card:hover {
@@ -221,13 +239,14 @@
 
         .project-card h3 {
             font-size: 1.2em;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: var(--main-color);
         }
 
         .project-card p {
             color: var(--secondary-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         .project-link {
@@ -237,6 +256,7 @@
             position: relative;
             padding-right: 20px;
             transition: all 0.2s;
+            align-self: flex-end;
         }
         
         .project-link:after {
@@ -256,23 +276,36 @@
             transform: translateX(3px);
         }
 
-        /* Publications section */
+        /* Publications styling */
+        .publications-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
         .publication {
-            margin-bottom: 25px;
-            padding: 20px;
-            border-radius: 8px;
-            background-color: var(--lighter-gray);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-gray);
+            background-color: transparent;
             transition: all 0.25s ease;
-            box-shadow: 0 2px 8px var(--soft-shadow);
+            box-shadow: none;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
         }
 
         .publication:hover {
-            box-shadow: 0 5px 15px var(--soft-shadow);
+            box-shadow: none;
+            transform: none;
+            background-color: var(--lighter-gray);
+            padding-left: 10px;
         }
 
         .publication h3 {
-            font-size: 1.1em;
-            margin-bottom: 5px;
+            font-size: 1.15em;
+            margin-bottom: 6px;
             line-height: 1.4;
             color: var(--main-color);
         }
@@ -280,20 +313,20 @@
         .authors {
             font-size: 0.9em;
             color: var(--secondary-color);
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             line-height: 1.5;
         }
 
         .venue {
             font-style: italic;
             font-size: 0.9em;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: var(--secondary-color);
         }
 
         .links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             font-size: 0.9em;
         }
 
@@ -386,11 +419,31 @@
         }
 
         /* Media queries */
+        @media (max-width: 1024px) {
+            body {
+                padding: 30px;
+            }
+            
+            .main-layout {
+                grid-template-columns: 3fr 2fr;
+                gap: 30px;
+            }
+            
+            .news-section {
+                position: static;
+            }
+        }
+        
         @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            
             header {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                gap: 30px;
             }
 
             .social-links {
@@ -399,6 +452,7 @@
             
             .main-layout {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
             
             .about-section, .news-section {
@@ -407,14 +461,23 @@
             
             .projects-wrapper {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .publication {
-                padding: 15px;
+                padding: 20px;
             }
             
             .news-item {
-                padding: 12px;
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -439,7 +502,7 @@
     <div class="main-layout">
         <section class="about-section">
             <h2>About</h2>
-            <p>I am a PhD student at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. Much of my current work focuses on evaluating and characterizing linguistic diversity and qualitative aspects of writing in generative language models.</p>
+            <p>I am a PhD student at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. My research focuses on evaluating and characterizing linguistic diversity in generative language models, and more generally, parsing through the vast amount of biomedical literature using natural language processing systems.</p>
             <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://vectorinstitute.ai/team/frank-rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
         </section>
         
@@ -479,6 +542,14 @@
                 <p class="venue">arXiv preprint (2024)</p>
                 <div class="links">
                     <a href="https://arxiv.org/abs/2502.06659" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3>Detection and Measurement of Syntactic Templates in Generated Text</h3>
+                <p class="authors">Chantal Shaib, Yanai Elazar, Junyi Jessy Li, Byron C. Wallace</p>
+                <p class="venue">Conference on Empirical Methods in Natural Language Processing (2024)</p>
+                <div class="links">
+                    <a href="https://aclanthology.org/2024.emnlp-main.368/" class="paper-link">[Paper]</a>
                     <a href="https://cshaib.github.io/syntactic_templates" class="project-page-button">Project Page</a>
                 </div>
             </div>
@@ -488,14 +559,8 @@
                 <p class="venue">arXiv preprint (2024)</p>
                 <div class="links">
                     <a href="https://arxiv.org/abs/2403.00553" class="paper-link">[Paper]</a>
-                </div>
-            </div>
-            <div class="publication">
-                <h3>Detection and Measurement of Syntactic Templates in Generated Text</h3>
-                <p class="authors">Chantal Shaib, Yanai Elazar, Junyi Jessy Li, Byron C. Wallace</p>
-                <p class="venue">Conference on Empirical Methods in Natural Language Processing (2024)</p>
-                <div class="links">
-                    <a href="https://aclanthology.org/2024.emnlp-main.368/" class="paper-link">[Paper]</a>
+                    <a href="https://ai-templates.app" class="project-page-button">Demo!</a>
+                    <a href="https://pypi.org/project/diversity/" class="project-page-button">Python Package</a>
                 </div>
             </div>
             <div class="publication">
@@ -507,19 +572,19 @@
                 </div>
             </div>
             <div class="publication">
-                <h3>Summarizing, Simplifying, and Synthesizing Medical Evidence using GPT-3 (with Varying Success)</h3>
-                <p class="authors">Chantal Shaib, Millicent Li, Sebastian Joseph, Iain Marshall, Junyi Jessy Li, Byron Wallace</p>
-                <p class="venue">Annual Meeting of the Association for Computational Linguistics (2023)</p>
-                <div class="links">
-                    <a href="https://aclanthology.org/2023.acl-short.119/" class="paper-link">[Paper]</a>
-                </div>
-            </div>
-            <div class="publication">
                 <h3>How Much Annotation is Needed to Compare Summarization Models?</h3>
                 <p class="authors">Chantal Shaib, Joe Barrow, Alexa Siu, Byron Wallace, Ani Nenkova</p>
                 <p class="venue">Workshop on Bridging Human-Computer Interaction and Natural Language Processing (2024)</p>
                 <div class="links">
                     <a href="https://aclanthology.org/2024.hcinlp-1.5/" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+            <div class="publication">
+                <h3>Summarizing, Simplifying, and Synthesizing Medical Evidence using GPT-3 (with Varying Success)</h3>
+                <p class="authors">Chantal Shaib, Millicent Li, Sebastian Joseph, Iain Marshall, Junyi Jessy Li, Byron Wallace</p>
+                <p class="venue">Annual Meeting of the Association for Computational Linguistics (2023)</p>
+                <div class="links">
+                    <a href="https://aclanthology.org/2023.acl-short.119/" class="paper-link">[Paper]</a>
                 </div>
             </div>
             <!-- <div class="publication">
