@@ -37,7 +37,7 @@
             line-height: 1.7;
             color: var(--main-color);
             background: var(--background);
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px;
         }
@@ -51,13 +51,13 @@
 
         h1 {
             font-size: 2.2em;
-            margin-top: 40px;
+            margin-top: 0;
             font-weight: 700;
         }
 
         h2 {
             font-size: 1.5em;
-            margin-top: 30px;
+            margin-top: 40px;
             font-weight: 700;
             padding-bottom: 10px;
             border-bottom: 1px solid var(--light-gray);
@@ -81,10 +81,14 @@
 
         /* Header styles */
         header {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             display: flex;
-            gap: 50px;
-            align-items: center;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .profile-container {
+            flex-shrink: 0;
         }
 
         .profile-image {
@@ -96,17 +100,11 @@
             background-color: #f0f0f0;
         }
 
-        .title {
-            font-size: 1.3em;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-
         .social-links {
             display: flex;
             gap: 20px;
             margin-top: 20px;
+            justify-content: center;
         }
 
         .social-links a {
@@ -120,57 +118,36 @@
             transform: translateY(-2px);
         }
 
-        /* Main layout */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            grid-gap: 50px;
-            margin-bottom: 30px;
+        .header-content {
+            flex-grow: 1;
         }
 
-        .about-section {
-            grid-column: 1;
-            padding-right: 20px;
-        }
-        
-        .about-section p {
-            font-size: 1.05em;
-            margin-bottom: 20px;
-            color: var(--main-color);
-            line-height: 1.8;
-        }
-
-        .news-section {
-            grid-column: 2;
+        .title {
+            font-size: 1.3em;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 400;
         }
 
         /* News section styling */
-        .news-section {
-            grid-column: 2;
-            position: sticky;
-            top: 40px;
-            align-self: start;
-        }
-        
         .news-grid {
             display: flex;
             flex-direction: column;
             gap: 20px;
+            margin-top: 20px;
         }
         
         .news-item {
-            padding: 10px;
-            border: 0px solid var(--light-gray);
+            padding: 15px;
             border-radius: 8px;
             transition: all 0.25s ease;
-            background-color: transparent;
-            box-shadow: none;
+            background-color: var(--lighter-gray);
+            box-shadow: 0 2px 8px var(--soft-shadow);
         }
 
         .news-item:hover {
             transform: translateY(-5px);
-            background-color: transparent;
-            box-shadow: none;
+            box-shadow: 0 8px 15px var(--soft-shadow);
         }
 
         .news-date {
@@ -214,16 +191,10 @@
         }
 
         /* Projects/Demos section */
-        .demos-section {
-            grid-column: 1;
-            padding-right: 20px;
-            margin-bottom: 30px;
-        }
-
         .projects-wrapper {
             margin-top: 20px;
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
         }
 
@@ -288,26 +259,21 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
         }
         
         .publication {
-            padding: 15px 0;
-            border-bottom: 1px solid var(--light-gray);
-            background-color: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--lighter-gray);
             transition: all 0.25s ease;
-            box-shadow: none;
-        }
-
-        .publication:last-child {
-            border-bottom: none;
+            box-shadow: 0 2px 8px var(--soft-shadow);
+            margin-bottom: 15px;
         }
 
         .publication:hover {
-            box-shadow: none;
-            transform: none;
-            background-color: var(--lighter-gray);
-            padding-left: 10px;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px var(--soft-shadow);
         }
 
         .publication h3 {
@@ -426,21 +392,6 @@
         }
 
         /* Media queries */
-        @media (max-width: 1024px) {
-            body {
-                padding: 30px;
-            }
-            
-            .main-layout {
-                grid-template-columns: 3fr 2fr;
-                gap: 30px;
-            }
-            
-            .news-section {
-                position: static;
-            }
-        }
-        
         @media (max-width: 768px) {
             body {
                 padding: 20px;
@@ -453,17 +404,12 @@
                 gap: 30px;
             }
 
+            .profile-container {
+                margin-bottom: 10px;
+            }
+
             .social-links {
                 justify-content: center;
-            }
-            
-            .main-layout {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .about-section, .news-section, .demos-section {
-                grid-column: 1;
             }
             
             .projects-wrapper {
@@ -471,20 +417,13 @@
                 gap: 20px;
             }
             
-            .publication {
-                padding: 20px;
-            }
-            
-            .news-item {
-                padding: 15px;
-            }
-            
             h1 {
-                font-size: 2.2em;
+                font-size: 2em;
+                text-align: center;
             }
             
             h2 {
-                font-size: 1.5em;
+                font-size: 1.4em;
             }
         }
     </style>
@@ -492,7 +431,7 @@
 <body>
     <header>
         <div class="profile-container">
-            <div class="profile-image"></div>
+            <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
             <div class="social-links">
                 <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
@@ -503,10 +442,7 @@
             </div>
         </div>
         <div class="header-content">
-            <div>
-                <h1>Chantal Shaib</h1>
-                <!-- <h2>PhD Candidate @ Northeastern University</h2> -->
-            </div>
+            <h1>Chantal Shaib</h1>
             <div class="about-header">
                 <p>I am a PhD student studying ML/NLP at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. My research focuses on evaluating and characterizing linguistic diversity in generative language models, and more generally, parsing through the vast amount of biomedical literature using natural language processing systems.</p>
                 <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
@@ -514,51 +450,34 @@
         </div>
     </header>
 
-    <div class="main-layout">
-        <!-- Demos section - one card on top of the other -->
-        <section class="demos-section">
-            <h2>Demos & Software</h2>
-            <div class="projects-wrapper">
-                <div class="project-card">
-                    <h3>AI Templates <span class="demo-badge">interactive</span></h3>
-                    <p>An interactive application that showcases templates for AI-powered interfaces and interactions.</p>
-                    <a href="#" class="project-link">Try It Live</a>
-                </div>
-                <div class="project-card">
-                    <h3>Diversity (PyPI) <span class="package-badge">package</span></h3>
-                    <p>A Python package that measures and evaluates linguistic diversity metrics in natural language generation systems.</p>
-                    <a href="#" class="project-link">View Package</a>
-                </div>
+    <!-- News section - One column layout -->
+    <section class="news-section">
+        <h2>Recent News <i class="fas fa-newspaper" style="font-size: 0.8em; color: var(--accent);"></i></h2>
+        <div class="news-grid">
+            <div class="news-item">
+                <span class="news-date">May 2025</span>
+                <p class="news-content">Our paper on syntactic templates as footprints in distillation was accepted to EMNLP findings. 📄✨</p>
             </div>
-        </section>
-        <section class="news-section">
-            <h2>Recent News <i class="fas fa-newspaper" style="font-size: 0.8em; color: var(--accent);"></i></h2>
-            <div class="news-grid">
-                <div class="news-item">
-                    <span class="news-date">May 2025</span>
-                    <p class="news-content">Our paper on syntactic templates as footprints in distillation was accepted to EMNLP findings. 📄✨</p>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">Jan 2025</span>
-                    <p class="news-content">Joining Meta NYC (FAIR) for another research internship in September! 🗽 </p>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">Oct 2024</span>
-                    <p class="news-content">Gave a talk about templates to UMass NLP group!</p>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">June 2024</span>
-                    <p class="news-content">Joined Meta Paris (GenAI) for a research internship working on Llama. 🦙 🇫🇷 🥐</p>
-                </div>
-                <div class="news-item">
-                    <span class="news-date">Jan 2024</span>
-                    <p class="news-content">Our paper on Zero-shot Robustness of Instruction-tuned Language Models was accepted to ICLR 2024 as a Spotlight! 🌟</p>
-                </div>
+            <div class="news-item">
+                <span class="news-date">Jan 2025</span>
+                <p class="news-content">Joining Meta NYC (FAIR) for another research internship in September! 🗽</p>
             </div>
-        </section>
-    </div>
+            <div class="news-item">
+                <span class="news-date">Oct 2024</span>
+                <p class="news-content">Gave a talk about templates to UMass NLP group!</p>
+            </div>
+            <div class="news-item">
+                <span class="news-date">June 2024</span>
+                <p class="news-content">Joined Meta Paris (GenAI) for a research internship working on Llama. 🦙 🇫🇷 🥐</p>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Jan 2024</span>
+                <p class="news-content">Our paper on Zero-shot Robustness of Instruction-tuned Language Models was accepted to ICLR 2024 as a Spotlight! 🌟</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Moved Demos & Software section here, right after the About section -->
+    <!-- Demos Section -->
     <section class="demos-section">
         <h2>Demos & Software</h2>
         <div class="projects-wrapper">
@@ -575,6 +494,7 @@
         </div>
     </section>
 
+    <!-- Publications Section -->
     <section>
         <h2>Publications</h2>
         <div class="publications-wrapper">
