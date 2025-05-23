@@ -42,6 +42,64 @@
             padding: 40px;
         }
 
+        /* Navigation header */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .nav-name {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--main-color);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+        }
+
+        .nav-name:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .nav-links a.active {
+            color: var(--main-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
         h1, h2, h3 {
             font-family: 'Georgia', 'Times New Roman', serif;
             color: var(--main-color);
@@ -89,7 +147,7 @@
 
         .profile-container {
             flex-shrink: 0;
-            margin-top: 41px; /* Precisely aligned with first paragraph text */
+            margin-top: 20px; /* Better alignment with content */
         }
 
         .profile-image {
@@ -183,199 +241,15 @@
             color: #c77b3b;
         }
 
+        .news-item:nth-child(6) .news-date {
+            background: var(--cute-orange);
+            color: #3bc7a6;
+        }
+
         .news-content {
             font-size: 0.95em;
             margin-bottom: 0;
             flex-grow: 1; /* Allow text to take up remaining space */
-        }
-
-        /* Projects/Demos section */
-        .projects-wrapper {
-            margin-top: 20px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .project-card {
-            padding: 10px;
-            border-radius: 15px;
-            transition: all 0.25s ease;
-            box-shadow: 0 2px 8px var(--soft-shadow);
-            display: flex;
-            background-color: var(--lighter-gray);
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 200px;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px var(--soft-shadow);
-        }
-
-        .project-card h3 {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            color: var(--main-color);
-        }
-
-        .project-card p {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .project-link {
-            display: inline-block;
-            color: var(--link-color);
-            font-weight: 600;
-            position: relative;
-            padding-right: 20px;
-            transition: all 0.2s;
-            align-self: flex-end;
-        }
-        
-        .project-link:after {
-            content: "→";
-            position: absolute;
-            right: 0;
-            transition: transform 0.2s;
-        }
-        
-        .project-link:hover {
-            color: var(--link-hover);
-            transform: translateX(3px);
-            text-decoration: none;
-        }
-        
-        .project-link:hover:after {
-            transform: translateX(3px);
-        }
-
-        /* Publications styling */
-        .publications-wrapper {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .publication {
-            padding: 20px;
-            border-radius: 15px;
-            transition: all 0.25s ease;
-            margin-bottom: 8px;
-        }
-
-        .publication:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px var(--soft-shadow);
-        }
-
-        .publication h3 {
-            font-size: 1.15em;
-            margin-bottom: 6px;
-            line-height: 1.4;
-            color: var(--main-color);
-        }
-
-        .authors {
-            font-size: 0.9em;
-            color: var(--secondary-color);
-            margin-bottom: 6px;
-            line-height: 1.5;
-        }
-
-        .venue {
-            font-style: italic;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-            color: var(--secondary-color);
-        }
-
-        .links {
-            display: flex;
-            gap: 12px;
-            font-size: 0.9em;
-        }
-
-        /* Demo and package badges */
-        .demo-badge {
-            display: inline-block;
-            background: var(--cute-pink);
-            color: #d14d8b;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.7em;
-            font-weight: 600;
-            margin-left: 10px;
-            vertical-align: middle;
-            animation: pulse 2s infinite;
-            box-shadow: 0 2px 4px var(--soft-shadow);
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .package-badge {
-            display: inline-block;
-            background: var(--cute-blue);
-            color: #3b6ea3;
-            padding: 3px 10px;
-            border-radius: 15px;
-            font-size: 0.7em;
-            font-weight: 600;
-            margin-left: 10px;
-            vertical-align: middle;
-            animation: pulse 2s infinite;
-            box-shadow: 0 2px 4px var(--soft-shadow);
-        }
-
-        .paper-link {
-            display: inline-block;
-            padding: 3px 10px;
-            background: var(--link-color);
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.8em;
-            font-weight: 600;
-            transition: all 0.2s;
-            box-shadow: 0 2px 4px var(--soft-shadow);
-        }
-        
-        .paper-link:hover {
-            background: var(--link-hover);
-            text-decoration: none;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px var(--soft-shadow);
-        }
-        
-        .project-page-button {
-            display: inline-block;
-            padding: 3px 10px;
-            background: var(--cute-pink);
-            color: #d14d8b;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.8em;
-            font-weight: 600;
-            margin-left: 8px;
-            transition: all 0.2s;
-            box-shadow: 0 2px 4px var(--soft-shadow);
-        }
-        
-        .project-page-button:hover {
-            background: #ffd1e6;
-            text-decoration: none;
-            color: #d14d8b;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px var(--soft-shadow);
         }
 
         /* Footer */
@@ -393,6 +267,19 @@
             body {
                 padding: 20px;
             }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a.active::after {
+                bottom: -22px;
+            }
             
             header {
                 flex-direction: column;
@@ -408,11 +295,6 @@
 
             .social-links {
                 justify-content: center;
-            }
-            
-            .projects-wrapper {
-                grid-template-columns: 1fr;
-                gap: 20px;
             }
             
             h1 {
@@ -440,6 +322,15 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html" class="nav-name">Chantal Shaib</a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="demos.html">Demos & Software</a>
+            <a href="publications.html">Publications</a>
+        </div>
+    </nav>
+
     <header>
         <div class="profile-container">
             <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
@@ -447,7 +338,7 @@
                 <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="#" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <!-- <a href="#" aria-label="BlueSky"><i class="fab fa-twitter"></i></a> -->
+                <a href="#" aria-label="BlueSky"><i class="fas fa-cloud"></i></a>
                 <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
@@ -488,91 +379,6 @@
             <div class="news-item">
                 <span class="news-date">May 2023</span>
                 <p class="news-content">Joined Adobe (Document Intelligence) for a research internship; mentored by <a href="https://scholar.google.com/citations?user=vXQdb5kAAAAJ&hl=en">Ani Nenkova</a>! 🎨</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demos Section -->
-    <section class="demos-section">
-        <h2>Demos & Software</h2>
-        <div class="projects-wrapper">
-            <div class="project-card">
-                <h3>AI Templates <span class="demo-badge">interactive</span></h3>
-                <p>An interactive application that showcases templates for AI-powered interfaces and interactions.</p>
-                <a href="https://ai-templates.app" class="project-link">Try the demo!</a>
-            </div>
-            <div class="project-card">
-                <h3>Diversity (PyPI) <span class="package-badge">package</span></h3>
-                <p>A Python package that measures and evaluates linguistic diversity metrics in natural language generation systems.</p>
-                <a href="https://pypi.org/project/diversity/" class="project-link">View package</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section>
-        <h2>Publications</h2>
-        <div class="publications-wrapper">       
-            <!-- "Who Taught You That?" paper link -->
-            <div class="publication">
-                <h3>Who Taught You That? Tracing Teachers in Model Distillation</h3>
-                <p class="authors">Somin Wadhwa*, <strong>Chantal Shaib*</strong>, Silvio Amir, Byron C. Wallace</p>
-                <p class="venue">ACL Findings (2025)</p>
-                <div class="links">
-                    <a href="https://arxiv.org/abs/2502.06659" class="paper-link">[Paper]</a>
-                </div>
-            </div>
-
-            <!-- "Detection and Measurement of Syntactic Templates" paper link -->
-            <div class="publication">
-                <h3>Detection and Measurement of Syntactic Templates in Generated Text</h3>
-                <p class="authors"><strong>Chantal Shaib</strong>, Yanai Elazar, Junyi Jessy Li, Byron C. Wallace</p>
-                <p class="venue">EMNLP Main (2024)</p>
-                <div class="links">
-                    <a href="https://aclanthology.org/2024.emnlp-main.368/" class="paper-link">[Paper]</a>
-                    <a href="https://cshaib.github.io/syntactic_templates/" class="project-page-button">Project Page</a>
-                </div>
-            </div>
-
-            <!-- "Standardizing the Measurement" paper link -->
-            <div class="publication">
-                <h3>Standardizing the Measurement of Text Diversity: A Tool and a Comparative Analysis of Scores</h3>
-                <p class="authors"><strong>Chantal Shaib</strong>, Joe Barrow, Jiuding Sun, Alexa F. Siu, Byron C. Wallace, Ani Nenkova</p>
-                <p class="venue">arXiv preprint (2024)</p>
-                <div class="links">
-                    <a href="https://arxiv.org/abs/2403.00553" class="paper-link">[Paper]</a>
-                    <a href="#" class="project-page-button">Demo!</a>
-                </div>
-            </div>
-
-            <!-- "Evaluating the Zero-shot Robustness" paper link -->
-            <div class="publication">
-                <h3>Evaluating the Zero-shot Robustness of Instruction-tuned Language Models</h3>
-                <p class="authors">Jiuding Sun, <strong>Chantal Shaib</strong>, Byron C. Wallace</p>
-                <p class="venue">ICLR (2024) - Spotlight</p>
-                <div class="links">
-                    <a href="https://arxiv.org/abs/2306.11270" class="paper-link">[Paper]</a>
-                </div>
-            </div>
-
-            <!-- "How Much Annotation is Needed" paper link -->
-            <div class="publication">
-                <h3>How Much Annotation is Needed to Compare Summarization Models?</h3>
-                <p class="authors"><strong>Chantal Shaib</strong>, Joe Barrow, Alexa Siu, Byron Wallace, Ani Nenkova</p>
-                <p class="venue">NAACL HCI+NLP Workshop (2024)</p>
-                <div class="links">
-                    <a href="https://aclanthology.org/2024.hcinlp-1.5/" class="paper-link">[Paper]</a>
-                </div>
-            </div>
-
-            <!-- "Summarizing, Simplifying" paper link -->
-            <div class="publication">
-                <h3>Summarizing, Simplifying, and Synthesizing Medical Evidence using GPT-3 (with Varying Success)</h3>
-                <p class="authors"><strong>Chantal Shaib</strong>, Millicent Li, Sebastian Joseph, Iain Marshall, Junyi Jessy Li, Byron Wallace</p>
-                <p class="venue">ACL Main (2023)</p>
-                <div class="links">
-                    <a href="https://aclanthology.org/2023.acl-short.119/" class="paper-link">[Paper]</a>
-                </div>
             </div>
         </div>
     </section>
