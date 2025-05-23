@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demos & Software | Chantal Shaib</title>
+    <meta name="author" content="Chantal Shaib">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #3b4252;
+            --secondary-color: #677189;
+            --light-gray: #e8eaed;
+            --lighter-gray: #f5f7fa;
+            --accent: #de7aad;
+            --link-color: #5e81ac;
+            --link-hover: #81a1c1;
+            --background: #ffffff;
+            --cute-pink: #ffe0f0;
+            --cute-blue: #e0f0ff;
+            --cute-green: #e0ffe0;
+            --cute-purple: #f0e0ff;
+            --cute-orange: #ffe0c0;
+            --soft-shadow: rgba(93, 113, 139, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--main-color);
+            background: var(--background);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* Navigation header */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .nav-name {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--main-color);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+        }
+
+        .nav-name:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .nav-links a.active {
+            color: var(--main-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--main-color);
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-top: 0;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 40px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Projects/Demos section */
+        .projects-wrapper {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px var(--soft-shadow);
+            display: flex;
+            background-color: var(--lighter-gray);
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px var(--soft-shadow);
+        }
+
+        .project-card h3 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: var(--main-color);
+        }
+
+        .project-card p {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--link-color);
+            font-weight: 600;
+            position: relative;
+            padding-right: 20px;
+            transition: all 0.2s;
+            align-self: flex-end;
+        }
+        
+        .project-link:after {
+            content: "→";
+            position: absolute;
+            right: 0;
+            transition: transform 0.2s;
+        }
+        
+        .project-link:hover {
+            color: var(--link-hover);
+            transform: translateX(3px);
+            text-decoration: none;
+        }
+        
+        .project-link:hover:after {
+            transform: translateX(3px);
+        }
+
+        /* Demo and package badges */
+        .demo-badge {
+            display: inline-block;
+            background: var(--cute-pink);
+            color: #d14d8b;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+            box-shadow: 0 2px 4px var(--soft-shadow);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .package-badge {
+            display: inline-block;
+            background: var(--cute-blue);
+            color: #3b6ea3;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+            box-shadow: 0 2px 4px var(--soft-shadow);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 0.9em;
+        }
+
+        /* Media queries */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a.active::after {
+                bottom: -22px;
+            }
+            
+            .projects-wrapper {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../" class="nav-name">Chantal Shaib</a>
+        <div class="nav-links">
+            <a href="../">Home</a>
+            <a href="../demos" class="active">Demos & Software</a>
+            <a href="../publications">Publications</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Demos & Software</h1>
+        
+        <div class="projects-wrapper">
+            <div class="project-card">
+                <div>
+                    <h3>AI Templates <span class="demo-badge">interactive</span></h3>
+                    <p>An interactive application that showcases templates for AI-powered interfaces and interactions.</p>
+                </div>
+                <a href="https://ai-templates.app" class="project-link">Try the demo!</a>
+            </div>
+            <div class="project-card">
+                <div>
+                    <h3>Diversity (PyPI) <span class="package-badge">package</span></h3>
+                    <p>A Python package that measures and evaluates linguistic diversity metrics in natural language generation systems.</p>
+                </div>
+                <a href="https://pypi.org/project/diversity/" class="project-link">View package</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p style="font-size: 0.8em; margin-top: 10px; color: var(--secondary-color);">Made with <span style="color: var(--accent);">♥</span> in Boston</p>
+    </footer>
+</body>
+</html>

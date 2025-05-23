@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Publications | Chantal Shaib</title>
+    <meta name="author" content="Chantal Shaib">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-color: #3b4252;
+            --secondary-color: #677189;
+            --light-gray: #e8eaed;
+            --lighter-gray: #f5f7fa;
+            --accent: #de7aad;
+            --link-color: #5e81ac;
+            --link-hover: #81a1c1;
+            --background: #ffffff;
+            --cute-pink: #ffe0f0;
+            --cute-blue: #e0f0ff;
+            --cute-green: #e0ffe0;
+            --cute-purple: #f0e0ff;
+            --cute-orange: #ffe0c0;
+            --soft-shadow: rgba(93, 113, 139, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--main-color);
+            background: var(--background);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        /* Navigation header */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .nav-name {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--main-color);
+            text-decoration: none;
+            letter-spacing: -0.03em;
+        }
+
+        .nav-name:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .nav-links a.active {
+            color: var(--main-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: var(--main-color);
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-top: 0;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 40px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Publications styling */
+        .publications-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            margin-top: 20px;
+        }
+        
+        .publication {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-gray);
+            transition: all 0.25s ease;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .publication:hover {
+            transform: translateX(5px);
+        }
+
+        .publication h3 {
+            font-size: 1.1em;
+            margin-bottom: 4px;
+            line-height: 1.3;
+            color: var(--main-color);
+        }
+
+        .authors {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .venue {
+            font-style: italic;
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .links {
+            display: flex;
+            gap: 12px;
+            font-size: 0.9em;
+        }
+
+        .paper-link {
+            display: inline-block;
+            padding: 3px 10px;
+            background: var(--link-color);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.8em;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px var(--soft-shadow);
+        }
+        
+        .paper-link:hover {
+            background: var(--link-hover);
+            text-decoration: none;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--soft-shadow);
+        }
+        
+        .project-page-button {
+            display: inline-block;
+            padding: 3px 10px;
+            background: var(--cute-pink);
+            color: #d14d8b;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-left: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px var(--soft-shadow);
+        }
+        
+        .project-page-button:hover {
+            background: #ffd1e6;
+            text-decoration: none;
+            color: #d14d8b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px var(--soft-shadow);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 0.9em;
+        }
+
+        /* Media queries */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .nav-links a.active::after {
+                bottom: -22px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="../" class="nav-name">Chantal Shaib</a>
+        <div class="nav-links">
+            <a href="../">Home</a>
+            <a href="../demos">Demos & Software</a>
+            <a href="../publications" class="active">Publications</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Publications</h1>
+        
+        <div class="publications-wrapper">       
+            <!-- "Who Taught You That?" paper link -->
+            <div class="publication">
+                <h3>Who Taught You That? Tracing Teachers in Model Distillation</h3>
+                <p class="authors">Somin Wadhwa*, <strong>Chantal Shaib*</strong>, Silvio Amir, Byron C. Wallace</p>
+                <p class="venue">ACL Findings (2025)</p>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2502.06659" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+
+            <!-- "Detection and Measurement of Syntactic Templates" paper link -->
+            <div class="publication">
+                <h3>Detection and Measurement of Syntactic Templates in Generated Text</h3>
+                <p class="authors"><strong>Chantal Shaib</strong>, Yanai Elazar, Junyi Jessy Li, Byron C. Wallace</p>
+                <p class="venue">EMNLP Main (2024)</p>
+                <div class="links">
+                    <a href="https://aclanthology.org/2024.emnlp-main.368/" class="paper-link">[Paper]</a>
+                    <a href="https://cshaib.github.io/syntactic_templates/" class="project-page-button">Project Page</a>
+                </div>
+            </div>
+
+            <!-- "Standardizing the Measurement" paper link -->
+            <div class="publication">
+                <h3>Standardizing the Measurement of Text Diversity: A Tool and a Comparative Analysis of Scores</h3>
+                <p class="authors"><strong>Chantal Shaib</strong>, Joe Barrow, Jiuding Sun, Alexa F. Siu, Byron C. Wallace, Ani Nenkova</p>
+                <p class="venue">arXiv preprint (2024)</p>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2403.00553" class="paper-link">[Paper]</a>
+                    <a href="#" class="project-page-button">Demo!</a>
+                </div>
+            </div>
+
+            <!-- "Evaluating the Zero-shot Robustness" paper link -->
+            <div class="publication">
+                <h3>Evaluating the Zero-shot Robustness of Instruction-tuned Language Models</h3>
+                <p class="authors">Jiuding Sun, <strong>Chantal Shaib</strong>, Byron C. Wallace</p>
+                <p class="venue">ICLR (2024) - Spotlight</p>
+                <div class="links">
+                    <a href="https://arxiv.org/abs/2306.11270" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+
+            <!-- "How Much Annotation is Needed" paper link -->
+            <div class="publication">
+                <h3>How Much Annotation is Needed to Compare Summarization Models?</h3>
+                <p class="authors"><strong>Chantal Shaib</strong>, Joe Barrow, Alexa Siu, Byron Wallace, Ani Nenkova</p>
+                <p class="venue">NAACL HCI+NLP Workshop (2024)</p>
+                <div class="links">
+                    <a href="https://aclanthology.org/2024.hcinlp-1.5/" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+
+            <!-- "Summarizing, Simplifying" paper link -->
+            <div class="publication">
+                <h3>Summarizing, Simplifying, and Synthesizing Medical Evidence using GPT-3 (with Varying Success)</h3>
+                <p class="authors"><strong>Chantal Shaib</strong>, Millicent Li, Sebastian Joseph, Iain Marshall, Junyi Jessy Li, Byron Wallace</p>
+                <p class="venue">ACL Main (2023)</p>
+                <div class="links">
+                    <a href="https://aclanthology.org/2023.acl-short.119/" class="paper-link">[Paper]</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p style="font-size: 0.8em; margin-top: 10px; color: var(--secondary-color);">Made with <span style="color: var(--accent);">♥</span> in Boston</p>
+    </footer>
+</body>
+</html>
