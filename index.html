@@ -64,8 +64,9 @@
         /* Right column (headshot) */
         .headshot-col {
             display: flex;
-            align-items: flex-start;   /* vertical center within full column height */
-            justify-content: center; /* horizontal center */
+            align-items: flex-start;  /* stick to the top of the column */
+            justify-content: center;  /* keep image horizontally centered */
+            padding-top: 15px;        /* optional: fine-tune so it lines up with first line of bio */
         }
         .profile-image {
             width: clamp(160px, 22vw, 220px);
