@@ -60,29 +60,31 @@
 
         /* Header */
         header {
+            display: flex;
+            align-items: center; /* Align image with middle of text */
+            gap: 30px;
             margin-bottom: 50px;
+            flex-wrap: wrap;
         }
 
         h1 {
             font-size: 2em;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: var(--main-color);
         }
 
         .profile-image {
-            float: right;
             width: 180px;
             height: 180px;
             object-fit: cover;
-            margin-left: 30px;
-            margin-bottom: 20px;
             border-radius: 4px;
+            flex-shrink: 0;
         }
 
         .bio {
             text-align: justify;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .bio p {
@@ -91,7 +93,7 @@
 
         /* Contact links */
         .contact-links {
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .contact-links a {
@@ -168,10 +170,14 @@
                 gap: 20px;
             }
 
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
             .profile-image {
-                float: none;
-                display: block;
-                margin: 0 auto 20px;
+                margin-bottom: 20px;
             }
 
             .bio {
@@ -195,40 +201,38 @@
         <div class="nav-links">
             <a href="./" class="active">Home</a>
             <a href="./demos">Demos & Software</a>
-            <!-- <a href="./publications">Publications</a> -->
-            <!-- <a href="./misc">Misc</a> -->
         </div>
     </nav>
 
     <header>
         <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
-        
-        <h1>Chantal Shaib</h1>
-        
-        <div class="bio">
-            <p>I am a PhD student studying ML/NLP at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>; (07/25) I am also a Visiting Student in the HealthyML Lab at MIT, advised by <a href="https://www.csail.mit.edu/person/marzyeh-ghassemi">Marzyeh Ghassemi</a>. </p>
-            <p>My research focuses on <strong>evaluating and characterizing linguistic diversity</strong> in generative language models. I care about the implications of lexical and style homogenization in training data and in evaluation. </p>
-            
-            <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
-            
-            <p>Please see my <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a> for an up-to-date list of my publications!</p>
-
-            <p><small>I love fiber arts; you can often find me <a href="./misc/index.html"> knitting</a> in my free time.</small></p>
-        </div>
-
-        <div class="contact-links">
-            <a href="mailto:shaib.c@northeastern.edu">Email</a>
-            <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a>
-            <a href="https://twitter.com/chantalshaib">Twitter</a>
-            <a href="https://bsky.app/profile/chantalsh.bsky.social">BlueSky</a>
-            <a href="https://github.com/cshaib">GitHub</a>
-            <a href="https://www.linkedin.com/in/chantal-s-088b24109/">LinkedIn</a>
+        <div>
+            <h1>Chantal Shaib</h1>
+            <div class="bio">
+                <p>I am a PhD student studying ML/NLP at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>; (07/25) I am also a Visiting Student in the HealthyML Lab at MIT, advised by <a href="https://www.csail.mit.edu/person/marzyeh-ghassemi">Marzyeh Ghassemi</a>. </p>
+                <p>My research focuses on <strong>evaluating and characterizing linguistic diversity</strong> in generative language models. I care about the implications of lexical and style homogenization in training data and in evaluation. </p>
+                <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
+                <p>Please see my <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a> for an up-to-date list of my publications!</p>
+                <p><small>I love fiber arts; you can often find me <a href="./misc/index.html">knitting</a> in my free time.</small></p>
+            </div>
+            <div class="contact-links">
+                <a href="mailto:shaib.c@northeastern.edu">Email</a>
+                <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a>
+                <a href="https://twitter.com/chantalshaib">Twitter</a>
+                <a href="https://bsky.app/profile/chantalsh.bsky.social">BlueSky</a>
+                <a href="https://github.com/cshaib">GitHub</a>
+                <a href="https://www.linkedin.com/in/chantal-s-088b24109/">LinkedIn</a>
+            </div>
         </div>
     </header>
 
     <section class="news-section">
         <h2>news</h2>
         <ul class="news-list">
+            <li class="news-item">
+                <span class="news-date">Sept 2025</span>
+                <div class="news-content">Successfully presented my thesis proposal: What Makes Large Language Model Text Distinct? Lexical and Syntactic Markers of Style</a>!.</div>
+            </li>
             <li class="news-item">
                 <span class="news-date">July 2025</span>
                 <div class="news-content">Visiting @ MIT, working with <a href="https://scholar.google.com/citations?user=9RyeFYwAAAAJ&hl=en">Marzyeh Ghassemi</a>!.</div>
