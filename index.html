@@ -17,11 +17,7 @@
             --border-color: #e0e0e0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', Arial, sans-serif;
@@ -35,38 +31,24 @@
         }
 
         /* Navigation */
-        nav {
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
+        nav { margin-bottom: 40px; text-align: center; }
+        .nav-links { display: flex; justify-content: center; gap: 40px; }
         .nav-links a {
             color: var(--secondary-color);
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s;
         }
+        .nav-links a:hover, .nav-links a.active { color: var(--main-color); }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--main-color);
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            align-items: center; /* Align image with middle of text */
+        /* Header (two-column hero) */
+        header { margin-bottom: 50px; }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr; /* 75% bio | 25% image */
             gap: 30px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
+            align-items: stretch; /* let columns share the same row height */
         }
-
         h1 {
             font-size: 2em;
             font-weight: 600;
@@ -74,81 +56,56 @@
             color: var(--main-color);
         }
 
+        /* Left column (bio) */
+        .bio-col { display: flex; flex-direction: column; }
+        .bio { text-align: justify; margin-bottom: 20px; }
+        .bio p { margin-bottom: 15px; }
+
+        /* Right column (headshot) */
+        .headshot-col {
+            display: flex;
+            align-items: center;   /* vertical center within full column height */
+            justify-content: center; /* horizontal center */
+        }
         .profile-image {
-            width: 180px;
-            height: 180px;
+            width: clamp(160px, 22vw, 220px);
+            aspect-ratio: 1 / 1;
             object-fit: cover;
-            border-radius: 4px;
-            flex-shrink: 0;
-        }
-
-        .bio {
-            text-align: justify;
-            margin-bottom: 20px;
-        }
-
-        .bio p {
-            margin-bottom: 15px;
+            border-radius: 8px;
+            height: auto; /* aspect-ratio handles height */
         }
 
         /* Contact links */
-        .contact-links {
-            margin-top: 10px;
-        }
-
+        .contact-links { margin-top: 10px; }
         .contact-links a {
             color: var(--link-color);
             text-decoration: none;
             margin-right: 20px;
             font-weight: 500;
         }
+        .contact-links a:hover { text-decoration: underline; }
 
-        .contact-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* News section */
-        .news-section {
-            margin-top: 50px;
-        }
-
+        /* News */
+        .news-section { margin-top: 50px; }
         h2 {
             font-size: 1.3em;
             font-weight: 600;
             margin-bottom: 20px;
             color: var(--main-color);
         }
-
-        .news-list {
-            list-style: none;
-        }
-
-        .news-item {
-            margin-bottom: 15px;
-            display: flex;
-            gap: 15px;
-        }
-
+        .news-list { list-style: none; }
+        .news-item { margin-bottom: 15px; display: flex; gap: 15px; }
         .news-date {
             color: var(--secondary-color);
             font-weight: 500;
             min-width: 80px;
             flex-shrink: 0;
         }
-
-        .news-content {
-            color: var(--main-color);
-        }
+        .news-content { color: var(--main-color); }
 
         /* Links */
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
         /* Footer */
         footer {
@@ -160,39 +117,20 @@
             font-size: 0.9em;
         }
 
-        /* Mobile responsive */
+        /* Mobile */
         @media (max-width: 768px) {
-            body {
-                padding: 20px 15px;
-            }
+            body { padding: 20px 15px; }
+            .nav-links { gap: 20px; }
 
-            .nav-links {
+            .hero-grid {
+                grid-template-columns: 1fr; /* stack */
                 gap: 20px;
             }
+            .headshot-col { order: -1; } /* show image above text on mobile; remove if you prefer below */
+            .bio { text-align: left; }
 
-            header {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .profile-image {
-                margin-bottom: 20px;
-            }
-
-            .bio {
-                text-align: left;
-            }
-
-            .news-item {
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .news-date {
-                min-width: auto;
-                font-size: 0.9em;
-            }
+            .news-item { flex-direction: column; gap: 5px; }
+            .news-date { min-width: auto; font-size: 0.9em; }
         }
     </style>
 </head>
@@ -201,27 +139,37 @@
         <div class="nav-links">
             <a href="./" class="active">Home</a>
             <a href="./demos">Demos & Software</a>
+            <!-- <a href="./publications">Publications</a> -->
+            <!-- <a href="./misc">Misc</a> -->
         </div>
     </nav>
 
     <header>
-        <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
-        <div>
-            <h1>Chantal Shaib</h1>
-            <div class="bio">
-                <p>I am a PhD student studying ML/NLP at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>; (07/25) I am also a Visiting Student in the HealthyML Lab at MIT, advised by <a href="https://www.csail.mit.edu/person/marzyeh-ghassemi">Marzyeh Ghassemi</a>. </p>
-                <p>My research focuses on <strong>evaluating and characterizing linguistic diversity</strong> in generative language models. I care about the implications of lexical and style homogenization in training data and in evaluation. </p>
-                <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
-                <p>Please see my <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a> for an up-to-date list of my publications!</p>
-                <p><small>I love fiber arts; you can often find me <a href="./misc/index.html">knitting</a> in my free time.</small></p>
+        <div class="hero-grid">
+            <!-- LEFT: Bio (75%) -->
+            <div class="bio-col">
+                <h1>Chantal Shaib</h1>
+                <div class="bio">
+                    <p>I am a PhD student studying ML/NLP at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>; (07/25) I am also a Visiting Student in the HealthyML Lab at MIT, advised by <a href="https://www.csail.mit.edu/person/marzyeh-ghassemi">Marzyeh Ghassemi</a>. </p>
+                    <p>My research focuses on <strong>evaluating and characterizing linguistic diversity</strong> in generative language models. I care about the implications of lexical and style homogenization in training data and in evaluation. </p>
+                    <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
+                    <p>Please see my <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a> for an up-to-date list of my publications!</p>
+                    <p><small>I love fiber arts; you can often find me <a href="./misc/index.html">knitting</a> in my free time.</small></p>
+                </div>
+
+                <div class="contact-links">
+                    <a href="mailto:shaib.c@northeastern.edu">Email</a>
+                    <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a>
+                    <a href="https://twitter.com/chantalshaib">Twitter</a>
+                    <a href="https://bsky.app/profile/chantalsh.bsky.social">BlueSky</a>
+                    <a href="https://github.com/cshaib">GitHub</a>
+                    <a href="https://www.linkedin.com/in/chantal-s-088b24109/">LinkedIn</a>
+                </div>
             </div>
-            <div class="contact-links">
-                <a href="mailto:shaib.c@northeastern.edu">Email</a>
-                <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a>
-                <a href="https://twitter.com/chantalshaib">Twitter</a>
-                <a href="https://bsky.app/profile/chantalsh.bsky.social">BlueSky</a>
-                <a href="https://github.com/cshaib">GitHub</a>
-                <a href="https://www.linkedin.com/in/chantal-s-088b24109/">LinkedIn</a>
+
+            <!-- RIGHT: Image (25%) -->
+            <div class="headshot-col">
+                <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
             </div>
         </div>
     </header>
@@ -231,7 +179,7 @@
         <ul class="news-list">
             <li class="news-item">
                 <span class="news-date">Sept 2025</span>
-                <div class="news-content">Successfully presented my thesis proposal: What Makes Large Language Model Text Distinct? Lexical and Syntactic Markers of Style</a>!.</div>
+                <div class="news-content">Successfully presented my thesis proposal: What Makes Large Language Model Text Distinct? Lexical and Syntactic Markers of Style.</div>
             </li>
             <li class="news-item">
                 <span class="news-date">July 2025</span>
@@ -239,7 +187,7 @@
             </li>
             <li class="news-item">
                 <span class="news-date">May 2025</span>
-                <div class="news-content">Our paper on syntactic templates as footprints in distillation was accepted to EMNLP findings.</div>
+                <div class="news-content">Our paper on syntactic templates as footprints in distillation was accepted to EMNLP Findings.</div>
             </li>
             <li class="news-item">
                 <span class="news-date">Jan 2025</span>
@@ -255,7 +203,7 @@
             </li>
             <li class="news-item">
                 <span class="news-date">Oct 2023</span>
-                <div class="news-content">Gave a talk on templates in LLM-generated text to the UT Austin NLP Seminar Group. </div>
+                <div class="news-content">Gave a talk on templates in LLM-generated text to the UT Austin NLP Seminar Group.</div>
             </li>
             <li class="news-item">
                 <span class="news-date">Jan 2024</span>
@@ -269,7 +217,7 @@
     </section>
 
     <footer>
-        <p> Last updated -- 2025/08/11</p>
+        <p>Last updated -- 2025/09/12</p>
     </footer>
 </body>
 </html>
