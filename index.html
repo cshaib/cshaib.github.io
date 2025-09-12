@@ -41,14 +41,8 @@
         }
         .nav-links a:hover, .nav-links a.active { color: var(--main-color); }
 
-        /* Header (two-column hero) */
+        /* Header */
         header { margin-bottom: 50px; }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 3fr 1fr; /* 75% bio | 25% image */
-            gap: 30px;
-            align-items: stretch; /* let columns share the same row height */
-        }
         h1 {
             font-size: 2em;
             font-weight: 600;
@@ -56,28 +50,25 @@
             color: var(--main-color);
         }
 
-        /* Left column (bio) */
-        .bio-col { display: flex; flex-direction: column; }
-        .bio { text-align: justify; margin-bottom: 20px; }
+        /* Bio + floated image */
+        .bio { text-align: justify; }
+        .bio::after { content: ""; display: table; clear: both; } /* clearfix for float */
+
+        .profile-image {
+            float: right;                  /* wrap text around image */
+            width: 220px;
+            height: 220px;                 /* keep square; adjust if needed */
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 0 0 16px 24px;         /* space below & to the left */
+            /* Optional: smoother wrap around rounded corners */
+            /* shape-outside: inset(0 round 12px); */
+        }
+
         .bio p { margin-bottom: 15px; }
 
-        /* Right column (headshot) */
-        .headshot-col {
-            display: flex;
-            align-items: flex-start;  /* stick to the top of the column */
-            justify-content: center;  /* keep image horizontally centered */
-            padding-top: 55px;        /* optional: fine-tune so it lines up with first line of bio */
-        }
-        .profile-image {
-            width: clamp(160px, 22vw, 220px);
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 8px;
-            height: auto; /* aspect-ratio handles height */
-        }
-
-        /* Contact links */
-        .contact-links { margin-top: 10px; }
+        /* Contact links sit below the floated image */
+        .contact-links { clear: both; margin-top: 10px; }
         .contact-links a {
             color: var(--link-color);
             text-decoration: none;
@@ -96,12 +87,7 @@
         }
         .news-list { list-style: none; }
         .news-item { margin-bottom: 15px; display: flex; gap: 15px; }
-        .news-date {
-            color: var(--secondary-color);
-            font-weight: 500;
-            min-width: 80px;
-            flex-shrink: 0;
-        }
+        .news-date { color: var(--secondary-color); font-weight: 500; min-width: 80px; flex-shrink: 0; }
         .news-content { color: var(--main-color); }
 
         /* Links */
@@ -122,14 +108,14 @@
         @media (max-width: 768px) {
             body { padding: 20px 15px; }
             .nav-links { gap: 20px; }
-
-            .hero-grid {
-                grid-template-columns: 1fr; /* stack */
-                gap: 20px;
+            .profile-image {
+                float: none;
+                display: block;
+                margin: 0 auto 16px;
+                width: 160px;
+                height: 160px;
             }
-            .headshot-col { order: -1; } /* show image above text on mobile; remove if you prefer below */
             .bio { text-align: left; }
-
             .news-item { flex-direction: column; gap: 5px; }
             .news-date { min-width: auto; font-size: 0.9em; }
         }
@@ -146,34 +132,33 @@
     </nav>
 
     <header>
-        <div class="hero-grid">
-            <!-- LEFT: Bio (75%) -->
-            <div class="bio-col">
-                <h1>Chantal Shaib</h1>
-                <div class="bio">
-                    <p>I am a PhD student studying ML/NLP at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>; (07/25) I am also a Visiting Student in the HealthyML Lab at MIT, advised by <a href="https://www.csail.mit.edu/person/marzyeh-ghassemi">Marzyeh Ghassemi</a>. </p>
-                    <p>My research focuses on <strong>evaluating and characterizing linguistic diversity</strong> in generative language models. I care about the implications of lexical and style homogenization in training data and in evaluation. </p>
-                    <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
-                    <p>Please see my <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a> for an up-to-date list of my publications!</p>
-                    <p><small>I love fiber arts; you can often find me <a href="./misc/index.html">knitting</a> in my free time.</small></p>
-                </div>
+        <h1>Chantal Shaib</h1>
 
-                <div class="contact-links">
-                    <a href="mailto:shaib.c@northeastern.edu">Email</a>
-                    <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a>
-                    <a href="https://twitter.com/chantalshaib">Twitter</a>
-                    <a href="https://bsky.app/profile/chantalsh.bsky.social">BlueSky</a>
-                    <a href="https://github.com/cshaib">GitHub</a>
-                    <a href="https://www.linkedin.com/in/chantal-s-088b24109/">LinkedIn</a>
-                </div>
-            </div>
+        <div class="bio">
+            <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
 
-            <!-- RIGHT: Image (25%) -->
-            <div class="headshot-col">
-                <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
-            </div>
+            <p>I am a PhD student studying ML/NLP at Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>; (07/25) I am also a Visiting Student in the HealthyML Lab at MIT, advised by <a href="https://www.csail.mit.edu/person/marzyeh-ghassemi">Marzyeh Ghassemi</a>.</p>
+
+            <p>My research focuses on <strong>evaluating and characterizing linguistic diversity</strong> in generative language models. I care about the implications of lexical and style homogenization in training data and in evaluation.</p>
+
+            <p>I received my MSc in Applied Computing at the University of Toronto where I was advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>. During that time, I was awarded the Mitacs Accelerate Fellowship for my work in extending AI into operating rooms. Before that, I received my BSc in Neuroscience at Carleton University.</p>
+
+            <p>Please see my <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a> for an up-to-date list of my publications!</p>
+
+            <p><small>I love fiber arts; you can often find me <a href="./misc/index.html">knitting</a> in my free time.</small></p>
+        </div>
+
+        <div class="contact-links">
+            <a href="mailto:shaib.c@northeastern.edu">Email</a>
+            <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Google Scholar</a>
+            <a href="https://twitter.com/chantalshaib">Twitter</a>
+            <a href="https://bsky.app/profile/chantalsh.bsky.social">BlueSky</a>
+            <a href="https://github.com/cshaib">GitHub</a>
+            <a href="https://www.linkedin.com/in/chantal-s-088b24109/">LinkedIn</a>
         </div>
     </header>
+
+
 
     <section class="news-section">
         <h2>news</h2>
