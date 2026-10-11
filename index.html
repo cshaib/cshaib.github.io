@@ -95,7 +95,7 @@
         .contact-links {
             margin-top: 15px;
             display: grid;
-            grid-template-columns: repeat(3, auto);
+            grid-template-columns: repeat(4, auto);
             gap: 8px 12px;
             justify-content: center;
         }
@@ -103,10 +103,14 @@
             color: var(--link-color);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1em;
+            font-size: 1.4em;
             text-align: center;
+            transition: color 0.2s, transform 0.2s;
         }
-        .contact-links a:hover { text-decoration: underline; }
+        .contact-links a:hover {
+            color: var(--main-color);
+            transform: translateY(-2px);
+        }
         .news-section { margin-top: 50px; }
         h2 {
             font-size: 1.3em;
@@ -186,7 +190,7 @@
         <h1>Chantal Shaib</h1>
         <div class="bio-container">
             <div class="bio">
-            <p>Hello! I'm a post-doctoral researcher at <a href="https://healthyml.org/">MIT</a>, working with  <a href="https://healthyml.org/marzyeh/">Marzyeh Ghassemi</a>. I recently graduated with a PhD from Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. My research focuses on <strong>evaluating linguistic variance</strong> in generative models and its downstream implications for <b> robustness, novelty, and quality assessments</b>. In the past, I received my MSc in Applied Computing at the University of Toronto (advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>); and before that, I received my BSc in Neuroscience at Carleton University 🇨🇦.</p>
+            <p>Hello! I'm a post-doctoral researcher at <a href="https://healthyml.org/">MIT</a>, working with  <a href="https://healthyml.org/marzyeh/">Marzyeh Ghassemi</a>. I recently graduated with a PhD from Northeastern University, advised by <a href="https://www.byronwallace.com/">Byron Wallace</a>. My research focuses on <strong>evaluating linguistic variance</strong> in generative models and its downstream implications for <b> robustness, novelty, and quality assessments</b>. In the past, I received my MSc in Applied Computing at the University of Toronto (advised by <a href="https://web.cs.dal.ca/~rudzicz/">Frank Rudzicz</a>); and before that, I received my BSc in Neuroscience at Carleton University. 🇨🇦</p>
             <!-- <p>Currently, I'm interning on the Alignment team at MSL (<img src="images/meta-logo.png" alt="Meta" style="height: 0.9em; vertical-align: upper;"> Meta) working on <strong>reasoning, synthesis, and pluralistic alignment.</strong>  </p> -->
                 <p>I am also the developer/maintainer of <a href="https://github.com/cshaib/diversity">diversity</a>, a Python toolkit for (efficiently) evaluating diversity in text.</p>
             
@@ -217,12 +221,20 @@
             <div class="profile-column">
                 <img src="images/profile.png" alt="Chantal Shaib" class="profile-image">
                 <div class="contact-links">
-                    <a href="mailto:cshaib@mit.edu">Email</a>
-                    <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1">Scholar</a>
+                    <a href="mailto:cshaib@mit.edu" aria-label="Email" title="Email">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=pcuEwrsAAAAJ&hl=en&authuser=1" aria-label="Google Scholar" title="Google Scholar">
+                        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                    </a>
                     <!-- <a href="https://twitter.com/chantalshaib">Twitter</a> -->
                     <!-- <a href="https://bsky.app/profile/chantalsh.bsky.social">BlueSky</a> -->
-                    <a href="https://github.com/cshaib">GitHub</a>
-                    <a href="https://www.linkedin.com/in/chantal-s-088b24109/">LinkedIn</a>
+                    <a href="https://github.com/cshaib" aria-label="GitHub" title="GitHub">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/chantal-s-088b24109/" aria-label="LinkedIn" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
         </div>
